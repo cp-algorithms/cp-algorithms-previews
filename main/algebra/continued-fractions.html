@@ -11,20 +11,20 @@
 <link href="/cp-algorithms-previews/main/algebra/factoring-exp.html" rel="next"/>
 
 
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/favicon.ico" rel="icon"/>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.8.0" name="generator"/>
 <title>Continued fractions - Algorithms for Competitive Programming</title>
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/stylesheets/extra.css" rel="stylesheet"/>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7FLS2HCYHH"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7FLS2HCYHH",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7FLS2HCYHH",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/cp-algorithms-previews/preview/selector.css" rel="stylesheet"/><script defer="" src="/cp-algorithms-previews/preview/selector.js"></script></head>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/cp-algorithms-previews/preview/selector.css" rel="stylesheet"/><script defer="" src="/cp-algorithms-previews/preview/selector.js"></script></head>
 <body data-md-color-accent="indigo" data-md-color-primary="deep-purple" data-md-color-scheme="cpalgo" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -49,7 +49,7 @@
   </script>
 <nav aria-label="header.title" class="md-header__inner md-grid">
 <a aria-label="Algorithms for Competitive Programming" class="md-header__button md-logo" data-md-component="logo" href="/cp-algorithms-previews/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/favicon.ico"/>
+<img alt="logo" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -126,9 +126,7 @@
 </a>
 </div>
 <div class="md-header__option">
-<a aria-label="RSS" class="md-header__button md-icon" href="/cp-algorithms-previews/main/feed_rss_created.xml" title="RSS">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64m0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0m32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32"></path></svg>
-</a>
+
 </div>
 <div class="md-header__option">
 <a aria-label="Discord" class="md-header__button md-icon" href="https://discord.gg/HZ5AecN3KX" title="Discord">
@@ -151,7 +149,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Algorithms for Competitive Programming" class="md-nav__button md-logo" data-md-component="logo" href="/cp-algorithms-previews/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/favicon.ico"/>
+<img alt="logo" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico"/>
 </a>
     Algorithms for Competitive Programming
   </label>
@@ -4697,11 +4695,11 @@ x_k &amp; 1 &amp; 0 &amp; \dots &amp; 0 \\
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "/cp-algorithms-previews/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/javascripts/bundle.c21346df.min.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/javascript/config.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/javascript/sidebar-toggle-sync.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/javascript/donation-banner.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "/cp-algorithms-previews/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/bundle.c21346df.min.js"></script>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/config.js"></script>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/sidebar-toggle-sync.js"></script>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/donation-banner.js"></script>
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>

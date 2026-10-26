@@ -11,20 +11,20 @@
 <link href="/cp-algorithms-previews/main/graph/push-relabel.html" rel="next"/>
 
 
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/favicon.ico" rel="icon"/>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.8.0" name="generator"/>
 <title>Maximum flow - Ford-Fulkerson and Edmonds-Karp - Algorithms for Competitive Programming</title>
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/stylesheets/extra.css" rel="stylesheet"/>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7FLS2HCYHH"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7FLS2HCYHH",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7FLS2HCYHH",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-<link href="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/cp-algorithms-previews/preview/selector.css" rel="stylesheet"/><script defer="" src="/cp-algorithms-previews/preview/selector.js"></script></head>
+<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/cp-algorithms-previews/preview/selector.css" rel="stylesheet"/><script defer="" src="/cp-algorithms-previews/preview/selector.js"></script></head>
 <body data-md-color-accent="indigo" data-md-color-primary="deep-purple" data-md-color-scheme="cpalgo" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -49,7 +49,7 @@
   </script>
 <nav aria-label="header.title" class="md-header__inner md-grid">
 <a aria-label="Algorithms for Competitive Programming" class="md-header__button md-logo" data-md-component="logo" href="/cp-algorithms-previews/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/favicon.ico"/>
+<img alt="logo" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -126,9 +126,7 @@
 </a>
 </div>
 <div class="md-header__option">
-<a aria-label="RSS" class="md-header__button md-icon" href="/cp-algorithms-previews/main/feed_rss_created.xml" title="RSS">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64m0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0m32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32"></path></svg>
-</a>
+
 </div>
 <div class="md-header__option">
 <a aria-label="Discord" class="md-header__button md-icon" href="https://discord.gg/HZ5AecN3KX" title="Discord">
@@ -151,7 +149,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Algorithms for Competitive Programming" class="md-nav__button md-logo" data-md-component="logo" href="/cp-algorithms-previews/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/favicon.ico"/>
+<img alt="logo" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico"/>
 </a>
     Algorithms for Competitive Programming
   </label>
@@ -3680,7 +3678,7 @@ The source <span class="arithmatex">$s$</span> is origin of all the water, and t
 <p>The following image shows a flow network.
 The first value of each edge represents the flow, which is initially 0, and the second value represents the capacity.</p>
 <div style="text-align: center;">
-<img alt="Flow network" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow1.png"/>
+<img alt="Flow network" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow1.png"/>
 </div>
 <p>The value of the flow of a network is the sum of all the flows that get produced in the source <span class="arithmatex">$s$</span>, or equivalently to the sum of all the flows that are consumed by the sink <span class="arithmatex">$t$</span>.
 A <strong>maximum flow</strong> is a flow with the maximum possible value.
@@ -3689,7 +3687,7 @@ Finding this maximum flow of a flow network is the problem that we want to solve
 how much water can we push through the pipes from the source to the sink?</p>
 <p>The following image shows the maximum flow in the flow network.</p>
 <div style="text-align: center;">
-<img alt="Maximum flow" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow9.png"/>
+<img alt="Maximum flow" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow9.png"/>
 </div>
 <h2 id="ford-fulkerson-method">Ford-Fulkerson method<a class="headerlink" href="#ford-fulkerson-method" title="Permanent link">¶</a></h2>
 <p>Let's define one more thing.
@@ -3712,25 +3710,25 @@ we update <span class="arithmatex">$f((u, v)) ~\text{+=}~ C$</span> and <span cl
 We use the same flow network as above.
 Initially we start with a flow of 0.</p>
 <div style="text-align: center;">
-<img alt="Flow network" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow1.png"/>
+<img alt="Flow network" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow1.png"/>
 </div>
 <p>We can find the path <span class="arithmatex">$s - A - B - t$</span> with the residual capacities 7, 5, and 8.
 Their minimum is 5, therefore we can increase the flow along this path by 5.
 This gives a flow of 5 for the network.</p>
 <div style="text-align: center;">
-<img alt="First path" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow2.png"/>
-<img alt="Network after first path" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow3.png"/>
+<img alt="First path" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow2.png"/>
+<img alt="Network after first path" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow3.png"/>
 </div>
 <p>Again we look for an augmenting path, this time we find <span class="arithmatex">$s - D - A - C - t$</span> with the residual capacities 4, 3, 3, and 5.
 Therefore we can increase the flow by 3 and we get a flow of 8 for the network.</p>
 <div style="text-align: center;">
-<img alt="Second path" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow4.png"/>
-<img alt="Network after second path" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow5.png"/>
+<img alt="Second path" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow4.png"/>
+<img alt="Network after second path" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow5.png"/>
 </div>
 <p>This time we find the path <span class="arithmatex">$s - D - C - B - t$</span> with the residual capacities 1, 2, 3, and 3, and hence, we increase the flow by 1.</p>
 <div style="text-align: center;">
-<img alt="Third path" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow6.png"/>
-<img alt="Network after third path" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow7.png"/>
+<img alt="Third path" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow6.png"/>
+<img alt="Network after third path" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow7.png"/>
 </div>
 <p>This time we find the augmenting path <span class="arithmatex">$s - A - D - C - t$</span> with the residual capacities 2, 3, 1, and 2.
 We can increase the flow by 1.
@@ -3741,8 +3739,8 @@ But because we already have a flow of 3 from <span class="arithmatex">$D$</span>
 The intuition of it is the following:
 Instead of sending a flow of 3 from <span class="arithmatex">$D$</span> to <span class="arithmatex">$A$</span>, we only send 2 and compensate this by sending an additional flow of 1 from <span class="arithmatex">$s$</span> to <span class="arithmatex">$A$</span>, which allows us to send an additional flow of 1 along the path <span class="arithmatex">$D - C - t$</span>.</p>
 <div style="text-align: center;">
-<img alt="Fourth path" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow8.png"/>
-<img alt="Network after fourth path" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Flow9.png"/>
+<img alt="Fourth path" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow8.png"/>
+<img alt="Network after fourth path" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Flow9.png"/>
 </div>
 <p>Now, it is impossible to find an augmenting path between <span class="arithmatex">$s$</span> and <span class="arithmatex">$t$</span>, therefore this flow of <span class="arithmatex">$10$</span> is the maximum possible.
 We have found the maximum flow.</p>
@@ -3826,7 +3824,7 @@ It says that the capacity of the maximum flow has to be equal to the capacity of
 It shows that the capacity of the cut <span class="arithmatex">$\{s, A, D\}$</span> and <span class="arithmatex">$\{B, C, t\}$</span> is <span class="arithmatex">$5 + 3 + 2 = 10$</span>, which is equal to the maximum flow that we found.
 Other cuts will have a bigger capacity, like the capacity between <span class="arithmatex">$\{s, A\}$</span> and <span class="arithmatex">$\{B, C, D, t\}$</span> is <span class="arithmatex">$4 + 3 + 5 = 12$</span>.</p>
 <div style="text-align: center;">
-<img alt="Minimum cut" src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/graph/Cut.png"/>
+<img alt="Minimum cut" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/graph/Cut.png"/>
 </div>
 <p>A minimum cut can be found after performing a maximum flow computation using the Ford-Fulkerson method.
 One possible minimum cut is the following:
@@ -3882,11 +3880,11 @@ This partition can be easily found using <a href="/cp-algorithms-previews/main/g
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "/cp-algorithms-previews/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/assets/javascripts/bundle.c21346df.min.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/javascript/config.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/javascript/sidebar-toggle-sync.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/ed6a20ac2449187794a8f965a34422f25bf0dce7fee58456ac085dbdbb4dd274/javascript/donation-banner.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "/cp-algorithms-previews/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/bundle.c21346df.min.js"></script>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/config.js"></script>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/sidebar-toggle-sync.js"></script>
+<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/donation-banner.js"></script>
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
