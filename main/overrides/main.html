@@ -1,0 +1,31 @@
+<head><meta content="noindex" name="robots"/><link href="/cp-algorithms-previews/preview/selector.css" rel="stylesheet"/><script defer="" src="/cp-algorithms-previews/preview/selector.js"></script></head>{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <link href="/cp-algorithms-previews/main/overrides/%7B%7B%20%27apple-touch-icon.png%27%20%7C%20url%20%7D%7D" rel="apple-touch-icon" sizes="180x180"/>
+{% endblock %}
+
+{% block footer %}
+{% import "partials/language.html" as lang with context %}
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        {% if config.copyright %}
+          <div class="md-footer-copyright__highlight">
+            {{ config.copyright }}
+          </div>
+        {% endif %}
+        {% if not config.extra.generator == false %}
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+            Material for MkDocs
+          </a>
+        {% endif %}
+        {{ extracopyright }}
+      </div>
+      {% include "partials/social.html" %}
+    </div>
+</div>
+</footer>
+{% endblock %}
