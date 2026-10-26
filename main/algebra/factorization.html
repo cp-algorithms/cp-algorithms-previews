@@ -7,24 +7,22 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="The goal of this project is to translate the wonderful resource http://e-maxx.ru/algo which provides descriptions of many algorithms and data structures especially popular in field of competitive programming. Moreover we want to improve the collected knowledge by extending the articles and adding new articles to the collection." name="description"/>
 <link href="https://cp-algorithms.com/algebra/factorization.html" rel="canonical"/>
-<link href="/cp-algorithms-previews/main/algebra/primality_tests.html" rel="prev"/>
-<link href="/cp-algorithms-previews/main/algebra/phi-function.html" rel="next"/>
-
-
-<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico" rel="icon"/>
+<link href="/main/algebra/primality_tests.html" rel="prev"/>
+<link href="/main/algebra/phi-function.html" rel="next"/>
+<link href="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.8.0" name="generator"/>
 <title>Integer factorization - Algorithms for Competitive Programming</title>
-<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
-<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link href="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/stylesheets/extra.css" rel="stylesheet"/>
+<link href="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7FLS2HCYHH"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7FLS2HCYHH",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7FLS2HCYHH",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-<link href="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/cp-algorithms-previews/preview/selector.css" rel="stylesheet"/><script defer="" src="/cp-algorithms-previews/preview/selector.js"></script></head>
+<link href="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<script src="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/preview/selector.css" rel="stylesheet"/><script defer="" src="/preview/selector.js"></script></head>
 <body data-md-color-accent="indigo" data-md-color-primary="deep-purple" data-md-color-scheme="cpalgo" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -48,8 +46,8 @@
     }
   </script>
 <nav aria-label="header.title" class="md-header__inner md-grid">
-<a aria-label="Algorithms for Competitive Programming" class="md-header__button md-logo" data-md-component="logo" href="/cp-algorithms-previews/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico"/>
+<a aria-label="Algorithms for Competitive Programming" class="md-header__button md-logo" data-md-component="logo" href="/main/index.html" title="Algorithms for Competitive Programming">
+<img alt="logo" src="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -58,7 +56,7 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">
-<a aria-label="Algorithms for Competitive Programming" data-md-component="logo" href="/cp-algorithms-previews/main/index.html" title="Algorithms for Competitive Programming">
+<a aria-label="Algorithms for Competitive Programming" data-md-component="logo" href="/main/index.html" title="Algorithms for Competitive Programming">
               Algorithms for Competitive Programming
             </a>
 </span>
@@ -126,7 +124,6 @@
 </a>
 </div>
 <div class="md-header__option">
-
 </div>
 <div class="md-header__option">
 <a aria-label="Discord" class="md-header__button md-icon" href="https://discord.gg/HZ5AecN3KX" title="Discord">
@@ -148,8 +145,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Algorithms for Competitive Programming" class="md-nav__button md-logo" data-md-component="logo" href="/cp-algorithms-previews/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico"/>
+<a aria-label="Algorithms for Competitive Programming" class="md-nav__button md-logo" data-md-component="logo" href="/main/index.html" title="Algorithms for Competitive Programming">
+<img alt="logo" src="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/favicon.ico"/>
 </a>
     Algorithms for Competitive Programming
   </label>
@@ -188,7 +185,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/index.html">
+<a class="md-nav__link" href="/main/index.html">
 <span class="md-ellipsis">
     
   
@@ -200,7 +197,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/navigation.html">
+<a class="md-nav__link" href="/main/navigation.html">
 <span class="md-ellipsis">
     
   
@@ -212,7 +209,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/tags.html">
+<a class="md-nav__link" href="/main/tags.html">
 <span class="md-ellipsis">
     
   
@@ -224,7 +221,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/contrib.html">
+<a class="md-nav__link" href="/main/contrib.html">
 <span class="md-ellipsis">
     
   
@@ -236,7 +233,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/code_of_conduct.html">
+<a class="md-nav__link" href="/main/code_of_conduct.html">
 <span class="md-ellipsis">
     
   
@@ -248,7 +245,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/preview.html">
+<a class="md-nav__link" href="/main/preview.html">
 <span class="md-ellipsis">
     
   
@@ -309,7 +306,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/binary-exp.html">
+<a class="md-nav__link" href="/main/algebra/binary-exp.html">
 <span class="md-ellipsis">
     
   
@@ -321,7 +318,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/euclid-algorithm.html">
+<a class="md-nav__link" href="/main/algebra/euclid-algorithm.html">
 <span class="md-ellipsis">
     
   
@@ -333,7 +330,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/extended-euclid-algorithm.html">
+<a class="md-nav__link" href="/main/algebra/extended-euclid-algorithm.html">
 <span class="md-ellipsis">
     
   
@@ -345,7 +342,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/linear-diophantine-equation.html">
+<a class="md-nav__link" href="/main/algebra/linear-diophantine-equation.html">
 <span class="md-ellipsis">
     
   
@@ -357,7 +354,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/fibonacci-numbers.html">
+<a class="md-nav__link" href="/main/algebra/fibonacci-numbers.html">
 <span class="md-ellipsis">
     
   
@@ -395,7 +392,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/sieve-of-eratosthenes.html">
+<a class="md-nav__link" href="/main/algebra/sieve-of-eratosthenes.html">
 <span class="md-ellipsis">
     
   
@@ -407,7 +404,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/prime-sieve-linear.html">
+<a class="md-nav__link" href="/main/algebra/prime-sieve-linear.html">
 <span class="md-ellipsis">
     
   
@@ -419,7 +416,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/primality_tests.html">
+<a class="md-nav__link" href="/main/algebra/primality_tests.html">
 <span class="md-ellipsis">
     
   
@@ -443,7 +440,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<a class="md-nav__link md-nav__link--active" href="/cp-algorithms-previews/main/algebra/factorization.html">
+<a class="md-nav__link md-nav__link--active" href="/main/algebra/factorization.html">
 <span class="md-ellipsis">
     
   
@@ -596,7 +593,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/phi-function.html">
+<a class="md-nav__link" href="/main/algebra/phi-function.html">
 <span class="md-ellipsis">
     
   
@@ -608,7 +605,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/divisors.html">
+<a class="md-nav__link" href="/main/algebra/divisors.html">
 <span class="md-ellipsis">
     
   
@@ -646,7 +643,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/module-inverse.html">
+<a class="md-nav__link" href="/main/algebra/module-inverse.html">
 <span class="md-ellipsis">
     
   
@@ -658,7 +655,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/linear_congruence_equation.html">
+<a class="md-nav__link" href="/main/algebra/linear_congruence_equation.html">
 <span class="md-ellipsis">
     
   
@@ -670,7 +667,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/chinese-remainder-theorem.html">
+<a class="md-nav__link" href="/main/algebra/chinese-remainder-theorem.html">
 <span class="md-ellipsis">
     
   
@@ -682,7 +679,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/garners-algorithm.html">
+<a class="md-nav__link" href="/main/algebra/garners-algorithm.html">
 <span class="md-ellipsis">
     
   
@@ -694,7 +691,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/factorial-modulo.html">
+<a class="md-nav__link" href="/main/algebra/factorial-modulo.html">
 <span class="md-ellipsis">
     
   
@@ -706,7 +703,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/discrete-log.html">
+<a class="md-nav__link" href="/main/algebra/discrete-log.html">
 <span class="md-ellipsis">
     
   
@@ -718,7 +715,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/primitive-root.html">
+<a class="md-nav__link" href="/main/algebra/primitive-root.html">
 <span class="md-ellipsis">
     
   
@@ -730,7 +727,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/discrete-root.html">
+<a class="md-nav__link" href="/main/algebra/discrete-root.html">
 <span class="md-ellipsis">
     
   
@@ -742,7 +739,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/montgomery_multiplication.html">
+<a class="md-nav__link" href="/main/algebra/montgomery_multiplication.html">
 <span class="md-ellipsis">
     
   
@@ -780,7 +777,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/balanced-ternary.html">
+<a class="md-nav__link" href="/main/algebra/balanced-ternary.html">
 <span class="md-ellipsis">
     
   
@@ -792,7 +789,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/gray-code.html">
+<a class="md-nav__link" href="/main/algebra/gray-code.html">
 <span class="md-ellipsis">
     
   
@@ -830,7 +827,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/bit-manipulation.html">
+<a class="md-nav__link" href="/main/algebra/bit-manipulation.html">
 <span class="md-ellipsis">
     
   
@@ -842,7 +839,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/all-submasks.html">
+<a class="md-nav__link" href="/main/algebra/all-submasks.html">
 <span class="md-ellipsis">
     
   
@@ -854,7 +851,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/big-integer.html">
+<a class="md-nav__link" href="/main/algebra/big-integer.html">
 <span class="md-ellipsis">
     
   
@@ -866,7 +863,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/fft.html">
+<a class="md-nav__link" href="/main/algebra/fft.html">
 <span class="md-ellipsis">
     
   
@@ -878,7 +875,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/polynomial.html">
+<a class="md-nav__link" href="/main/algebra/polynomial.html">
 <span class="md-ellipsis">
     
   
@@ -890,7 +887,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/continued-fractions.html">
+<a class="md-nav__link" href="/main/algebra/continued-fractions.html">
 <span class="md-ellipsis">
     
   
@@ -902,7 +899,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/factoring-exp.html">
+<a class="md-nav__link" href="/main/algebra/factoring-exp.html">
 <span class="md-ellipsis">
     
   
@@ -966,7 +963,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/stack_queue_modification.html">
+<a class="md-nav__link" href="/main/data_structures/stack_queue_modification.html">
 <span class="md-ellipsis">
     
   
@@ -978,7 +975,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/sparse-table.html">
+<a class="md-nav__link" href="/main/data_structures/sparse-table.html">
 <span class="md-ellipsis">
     
   
@@ -1016,7 +1013,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/disjoint_set_union.html">
+<a class="md-nav__link" href="/main/data_structures/disjoint_set_union.html">
 <span class="md-ellipsis">
     
   
@@ -1028,7 +1025,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/fenwick.html">
+<a class="md-nav__link" href="/main/data_structures/fenwick.html">
 <span class="md-ellipsis">
     
   
@@ -1040,7 +1037,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/sqrt_decomposition.html">
+<a class="md-nav__link" href="/main/data_structures/sqrt_decomposition.html">
 <span class="md-ellipsis">
     
   
@@ -1052,7 +1049,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/segment_tree.html">
+<a class="md-nav__link" href="/main/data_structures/segment_tree.html">
 <span class="md-ellipsis">
     
   
@@ -1064,7 +1061,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/treap.html">
+<a class="md-nav__link" href="/main/data_structures/treap.html">
 <span class="md-ellipsis">
     
   
@@ -1076,7 +1073,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/sqrt-tree.html">
+<a class="md-nav__link" href="/main/data_structures/sqrt-tree.html">
 <span class="md-ellipsis">
     
   
@@ -1088,7 +1085,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/randomized_heap.html">
+<a class="md-nav__link" href="/main/data_structures/randomized_heap.html">
 <span class="md-ellipsis">
     
   
@@ -1126,7 +1123,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/data_structures/deleting_in_log_n.html">
+<a class="md-nav__link" href="/main/data_structures/deleting_in_log_n.html">
 <span class="md-ellipsis">
     
   
@@ -1167,7 +1164,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/dynamic_programming/intro-to-dp.html">
+<a class="md-nav__link" href="/main/dynamic_programming/intro-to-dp.html">
 <span class="md-ellipsis">
     
   
@@ -1179,7 +1176,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/dynamic_programming/knapsack.html">
+<a class="md-nav__link" href="/main/dynamic_programming/knapsack.html">
 <span class="md-ellipsis">
     
   
@@ -1191,7 +1188,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/dynamic_programming/longest_increasing_subsequence.html">
+<a class="md-nav__link" href="/main/dynamic_programming/longest_increasing_subsequence.html">
 <span class="md-ellipsis">
     
   
@@ -1226,7 +1223,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/dynamic_programming/divide-and-conquer-dp.html">
+<a class="md-nav__link" href="/main/dynamic_programming/divide-and-conquer-dp.html">
 <span class="md-ellipsis">
     
   
@@ -1238,7 +1235,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/dynamic_programming/knuth-optimization.html">
+<a class="md-nav__link" href="/main/dynamic_programming/knuth-optimization.html">
 <span class="md-ellipsis">
     
   
@@ -1276,7 +1273,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/dynamic_programming/profile-dynamics.html">
+<a class="md-nav__link" href="/main/dynamic_programming/profile-dynamics.html">
 <span class="md-ellipsis">
     
   
@@ -1288,7 +1285,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/dynamic_programming/zero_matrix.html">
+<a class="md-nav__link" href="/main/dynamic_programming/zero_matrix.html">
 <span class="md-ellipsis">
     
   
@@ -1352,7 +1349,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/string-hashing.html">
+<a class="md-nav__link" href="/main/string/string-hashing.html">
 <span class="md-ellipsis">
     
   
@@ -1364,7 +1361,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/rabin-karp.html">
+<a class="md-nav__link" href="/main/string/rabin-karp.html">
 <span class="md-ellipsis">
     
   
@@ -1376,7 +1373,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/prefix-function.html">
+<a class="md-nav__link" href="/main/string/prefix-function.html">
 <span class="md-ellipsis">
     
   
@@ -1388,7 +1385,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/z-function.html">
+<a class="md-nav__link" href="/main/string/z-function.html">
 <span class="md-ellipsis">
     
   
@@ -1400,7 +1397,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/suffix-array.html">
+<a class="md-nav__link" href="/main/string/suffix-array.html">
 <span class="md-ellipsis">
     
   
@@ -1412,7 +1409,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/aho_corasick.html">
+<a class="md-nav__link" href="/main/string/aho_corasick.html">
 <span class="md-ellipsis">
     
   
@@ -1450,7 +1447,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/suffix-tree-ukkonen.html">
+<a class="md-nav__link" href="/main/string/suffix-tree-ukkonen.html">
 <span class="md-ellipsis">
     
   
@@ -1462,7 +1459,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/suffix-automaton.html">
+<a class="md-nav__link" href="/main/string/suffix-automaton.html">
 <span class="md-ellipsis">
     
   
@@ -1474,7 +1471,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/lyndon_factorization.html">
+<a class="md-nav__link" href="/main/string/lyndon_factorization.html">
 <span class="md-ellipsis">
     
   
@@ -1512,7 +1509,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/expression_parsing.html">
+<a class="md-nav__link" href="/main/string/expression_parsing.html">
 <span class="md-ellipsis">
     
   
@@ -1524,7 +1521,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/manacher.html">
+<a class="md-nav__link" href="/main/string/manacher.html">
 <span class="md-ellipsis">
     
   
@@ -1536,7 +1533,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/string/main_lorentz.html">
+<a class="md-nav__link" href="/main/string/main_lorentz.html">
 <span class="md-ellipsis">
     
   
@@ -1600,7 +1597,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/linear_algebra/linear-system-gauss.html">
+<a class="md-nav__link" href="/main/linear_algebra/linear-system-gauss.html">
 <span class="md-ellipsis">
     
   
@@ -1612,7 +1609,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/linear_algebra/determinant-gauss.html">
+<a class="md-nav__link" href="/main/linear_algebra/determinant-gauss.html">
 <span class="md-ellipsis">
     
   
@@ -1624,7 +1621,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/linear_algebra/determinant-kraut.html">
+<a class="md-nav__link" href="/main/linear_algebra/determinant-kraut.html">
 <span class="md-ellipsis">
     
   
@@ -1636,7 +1633,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/linear_algebra/rank-matrix.html">
+<a class="md-nav__link" href="/main/linear_algebra/rank-matrix.html">
 <span class="md-ellipsis">
     
   
@@ -1700,7 +1697,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/algebra/factorial-divisors.html">
+<a class="md-nav__link" href="/main/algebra/factorial-divisors.html">
 <span class="md-ellipsis">
     
   
@@ -1712,7 +1709,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/combinatorics/binomial-coefficients.html">
+<a class="md-nav__link" href="/main/combinatorics/binomial-coefficients.html">
 <span class="md-ellipsis">
     
   
@@ -1724,7 +1721,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/combinatorics/catalan-numbers.html">
+<a class="md-nav__link" href="/main/combinatorics/catalan-numbers.html">
 <span class="md-ellipsis">
     
   
@@ -1762,7 +1759,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/combinatorics/inclusion-exclusion.html">
+<a class="md-nav__link" href="/main/combinatorics/inclusion-exclusion.html">
 <span class="md-ellipsis">
     
   
@@ -1774,7 +1771,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/combinatorics/burnside.html">
+<a class="md-nav__link" href="/main/combinatorics/burnside.html">
 <span class="md-ellipsis">
     
   
@@ -1786,7 +1783,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/combinatorics/stars_and_bars.html">
+<a class="md-nav__link" href="/main/combinatorics/stars_and_bars.html">
 <span class="md-ellipsis">
     
   
@@ -1798,7 +1795,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/combinatorics/generating_combinations.html">
+<a class="md-nav__link" href="/main/combinatorics/generating_combinations.html">
 <span class="md-ellipsis">
     
   
@@ -1836,7 +1833,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/combinatorics/bishops-on-chessboard.html">
+<a class="md-nav__link" href="/main/combinatorics/bishops-on-chessboard.html">
 <span class="md-ellipsis">
     
   
@@ -1848,7 +1845,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/combinatorics/bracket_sequences.html">
+<a class="md-nav__link" href="/main/combinatorics/bracket_sequences.html">
 <span class="md-ellipsis">
     
   
@@ -1860,7 +1857,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/combinatorics/counting_labeled_graphs.html">
+<a class="md-nav__link" href="/main/combinatorics/counting_labeled_graphs.html">
 <span class="md-ellipsis">
     
   
@@ -1924,7 +1921,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/num_methods/binary_search.html">
+<a class="md-nav__link" href="/main/num_methods/binary_search.html">
 <span class="md-ellipsis">
     
   
@@ -1936,7 +1933,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/num_methods/ternary_search.html">
+<a class="md-nav__link" href="/main/num_methods/ternary_search.html">
 <span class="md-ellipsis">
     
   
@@ -1948,7 +1945,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/num_methods/roots_newton.html">
+<a class="md-nav__link" href="/main/num_methods/roots_newton.html">
 <span class="md-ellipsis">
     
   
@@ -1960,7 +1957,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/num_methods/simulated_annealing.html">
+<a class="md-nav__link" href="/main/num_methods/simulated_annealing.html">
 <span class="md-ellipsis">
     
   
@@ -1998,7 +1995,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/num_methods/simpson-integration.html">
+<a class="md-nav__link" href="/main/num_methods/simpson-integration.html">
 <span class="md-ellipsis">
     
   
@@ -2062,7 +2059,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/basic-geometry.html">
+<a class="md-nav__link" href="/main/geometry/basic-geometry.html">
 <span class="md-ellipsis">
     
   
@@ -2074,7 +2071,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/segment-to-line.html">
+<a class="md-nav__link" href="/main/geometry/segment-to-line.html">
 <span class="md-ellipsis">
     
   
@@ -2086,7 +2083,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/lines-intersection.html">
+<a class="md-nav__link" href="/main/geometry/lines-intersection.html">
 <span class="md-ellipsis">
     
   
@@ -2098,7 +2095,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/check-segments-intersection.html">
+<a class="md-nav__link" href="/main/geometry/check-segments-intersection.html">
 <span class="md-ellipsis">
     
   
@@ -2110,7 +2107,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/segments-intersection.html">
+<a class="md-nav__link" href="/main/geometry/segments-intersection.html">
 <span class="md-ellipsis">
     
   
@@ -2122,7 +2119,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/circle-line-intersection.html">
+<a class="md-nav__link" href="/main/geometry/circle-line-intersection.html">
 <span class="md-ellipsis">
     
   
@@ -2134,7 +2131,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/circle-circle-intersection.html">
+<a class="md-nav__link" href="/main/geometry/circle-circle-intersection.html">
 <span class="md-ellipsis">
     
   
@@ -2146,7 +2143,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/tangents-to-two-circles.html">
+<a class="md-nav__link" href="/main/geometry/tangents-to-two-circles.html">
 <span class="md-ellipsis">
     
   
@@ -2158,7 +2155,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/length-of-segments-union.html">
+<a class="md-nav__link" href="/main/geometry/length-of-segments-union.html">
 <span class="md-ellipsis">
     
   
@@ -2196,7 +2193,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/oriented-triangle-area.html">
+<a class="md-nav__link" href="/main/geometry/oriented-triangle-area.html">
 <span class="md-ellipsis">
     
   
@@ -2208,7 +2205,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/area-of-simple-polygon.html">
+<a class="md-nav__link" href="/main/geometry/area-of-simple-polygon.html">
 <span class="md-ellipsis">
     
   
@@ -2220,7 +2217,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/point-in-convex-polygon.html">
+<a class="md-nav__link" href="/main/geometry/point-in-convex-polygon.html">
 <span class="md-ellipsis">
     
   
@@ -2232,7 +2229,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/minkowski.html">
+<a class="md-nav__link" href="/main/geometry/minkowski.html">
 <span class="md-ellipsis">
     
   
@@ -2244,7 +2241,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/picks-theorem.html">
+<a class="md-nav__link" href="/main/geometry/picks-theorem.html">
 <span class="md-ellipsis">
     
   
@@ -2256,7 +2253,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/lattice-points.html">
+<a class="md-nav__link" href="/main/geometry/lattice-points.html">
 <span class="md-ellipsis">
     
   
@@ -2294,7 +2291,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/convex-hull.html">
+<a class="md-nav__link" href="/main/geometry/convex-hull.html">
 <span class="md-ellipsis">
     
   
@@ -2306,7 +2303,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/convex_hull_trick.html">
+<a class="md-nav__link" href="/main/geometry/convex_hull_trick.html">
 <span class="md-ellipsis">
     
   
@@ -2344,7 +2341,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/intersecting_segments.html">
+<a class="md-nav__link" href="/main/geometry/intersecting_segments.html">
 <span class="md-ellipsis">
     
   
@@ -2382,7 +2379,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/planar.html">
+<a class="md-nav__link" href="/main/geometry/planar.html">
 <span class="md-ellipsis">
     
   
@@ -2394,7 +2391,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/point-location.html">
+<a class="md-nav__link" href="/main/geometry/point-location.html">
 <span class="md-ellipsis">
     
   
@@ -2432,7 +2429,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/nearest_points.html">
+<a class="md-nav__link" href="/main/geometry/nearest_points.html">
 <span class="md-ellipsis">
     
   
@@ -2444,7 +2441,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/delaunay.html">
+<a class="md-nav__link" href="/main/geometry/delaunay.html">
 <span class="md-ellipsis">
     
   
@@ -2456,7 +2453,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/vertical_decomposition.html">
+<a class="md-nav__link" href="/main/geometry/vertical_decomposition.html">
 <span class="md-ellipsis">
     
   
@@ -2468,7 +2465,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/halfplane-intersection.html">
+<a class="md-nav__link" href="/main/geometry/halfplane-intersection.html">
 <span class="md-ellipsis">
     
   
@@ -2480,7 +2477,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/manhattan-distance.html">
+<a class="md-nav__link" href="/main/geometry/manhattan-distance.html">
 <span class="md-ellipsis">
     
   
@@ -2492,7 +2489,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/geometry/enclosing-circle.html">
+<a class="md-nav__link" href="/main/geometry/enclosing-circle.html">
 <span class="md-ellipsis">
     
   
@@ -2556,7 +2553,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/breadth-first-search.html">
+<a class="md-nav__link" href="/main/graph/breadth-first-search.html">
 <span class="md-ellipsis">
     
   
@@ -2568,7 +2565,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/depth-first-search.html">
+<a class="md-nav__link" href="/main/graph/depth-first-search.html">
 <span class="md-ellipsis">
     
   
@@ -2606,7 +2603,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/search-for-connected-components.html">
+<a class="md-nav__link" href="/main/graph/search-for-connected-components.html">
 <span class="md-ellipsis">
     
   
@@ -2618,7 +2615,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/bridge-searching.html">
+<a class="md-nav__link" href="/main/graph/bridge-searching.html">
 <span class="md-ellipsis">
     
   
@@ -2630,7 +2627,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/bridge-searching-online.html">
+<a class="md-nav__link" href="/main/graph/bridge-searching-online.html">
 <span class="md-ellipsis">
     
   
@@ -2642,7 +2639,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/cutpoints.html">
+<a class="md-nav__link" href="/main/graph/cutpoints.html">
 <span class="md-ellipsis">
     
   
@@ -2654,7 +2651,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/strongly-connected-components.html">
+<a class="md-nav__link" href="/main/graph/strongly-connected-components.html">
 <span class="md-ellipsis">
     
   
@@ -2666,7 +2663,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/strong-orientation.html">
+<a class="md-nav__link" href="/main/graph/strong-orientation.html">
 <span class="md-ellipsis">
     
   
@@ -2704,7 +2701,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/dijkstra.html">
+<a class="md-nav__link" href="/main/graph/dijkstra.html">
 <span class="md-ellipsis">
     
   
@@ -2716,7 +2713,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/dijkstra_sparse.html">
+<a class="md-nav__link" href="/main/graph/dijkstra_sparse.html">
 <span class="md-ellipsis">
     
   
@@ -2728,7 +2725,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/bellman_ford.html">
+<a class="md-nav__link" href="/main/graph/bellman_ford.html">
 <span class="md-ellipsis">
     
   
@@ -2740,7 +2737,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/01_bfs.html">
+<a class="md-nav__link" href="/main/graph/01_bfs.html">
 <span class="md-ellipsis">
     
   
@@ -2752,7 +2749,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/desopo_pape.html">
+<a class="md-nav__link" href="/main/graph/desopo_pape.html">
 <span class="md-ellipsis">
     
   
@@ -2790,7 +2787,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/all-pair-shortest-path-floyd-warshall.html">
+<a class="md-nav__link" href="/main/graph/all-pair-shortest-path-floyd-warshall.html">
 <span class="md-ellipsis">
     
   
@@ -2802,7 +2799,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/fixed_length_paths.html">
+<a class="md-nav__link" href="/main/graph/fixed_length_paths.html">
 <span class="md-ellipsis">
     
   
@@ -2840,7 +2837,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/mst_prim.html">
+<a class="md-nav__link" href="/main/graph/mst_prim.html">
 <span class="md-ellipsis">
     
   
@@ -2852,7 +2849,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/mst_kruskal.html">
+<a class="md-nav__link" href="/main/graph/mst_kruskal.html">
 <span class="md-ellipsis">
     
   
@@ -2864,7 +2861,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/mst_kruskal_with_dsu.html">
+<a class="md-nav__link" href="/main/graph/mst_kruskal_with_dsu.html">
 <span class="md-ellipsis">
     
   
@@ -2876,7 +2873,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/second_best_mst.html">
+<a class="md-nav__link" href="/main/graph/second_best_mst.html">
 <span class="md-ellipsis">
     
   
@@ -2888,7 +2885,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/kirchhoff-theorem.html">
+<a class="md-nav__link" href="/main/graph/kirchhoff-theorem.html">
 <span class="md-ellipsis">
     
   
@@ -2900,7 +2897,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/pruefer_code.html">
+<a class="md-nav__link" href="/main/graph/pruefer_code.html">
 <span class="md-ellipsis">
     
   
@@ -2938,7 +2935,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/finding-cycle.html">
+<a class="md-nav__link" href="/main/graph/finding-cycle.html">
 <span class="md-ellipsis">
     
   
@@ -2950,7 +2947,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/finding-negative-cycle-in-graph.html">
+<a class="md-nav__link" href="/main/graph/finding-negative-cycle-in-graph.html">
 <span class="md-ellipsis">
     
   
@@ -2962,7 +2959,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/euler_path.html">
+<a class="md-nav__link" href="/main/graph/euler_path.html">
 <span class="md-ellipsis">
     
   
@@ -3000,7 +2997,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/lca.html">
+<a class="md-nav__link" href="/main/graph/lca.html">
 <span class="md-ellipsis">
     
   
@@ -3012,7 +3009,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/lca_binary_lifting.html">
+<a class="md-nav__link" href="/main/graph/lca_binary_lifting.html">
 <span class="md-ellipsis">
     
   
@@ -3024,7 +3021,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/lca_farachcoltonbender.html">
+<a class="md-nav__link" href="/main/graph/lca_farachcoltonbender.html">
 <span class="md-ellipsis">
     
   
@@ -3036,7 +3033,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/rmq_linear.html">
+<a class="md-nav__link" href="/main/graph/rmq_linear.html">
 <span class="md-ellipsis">
     
   
@@ -3048,7 +3045,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/lca_tarjan.html">
+<a class="md-nav__link" href="/main/graph/lca_tarjan.html">
 <span class="md-ellipsis">
     
   
@@ -3086,7 +3083,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/edmonds_karp.html">
+<a class="md-nav__link" href="/main/graph/edmonds_karp.html">
 <span class="md-ellipsis">
     
   
@@ -3098,7 +3095,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/push-relabel.html">
+<a class="md-nav__link" href="/main/graph/push-relabel.html">
 <span class="md-ellipsis">
     
   
@@ -3110,7 +3107,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/push-relabel-faster.html">
+<a class="md-nav__link" href="/main/graph/push-relabel-faster.html">
 <span class="md-ellipsis">
     
   
@@ -3122,7 +3119,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/dinic.html">
+<a class="md-nav__link" href="/main/graph/dinic.html">
 <span class="md-ellipsis">
     
   
@@ -3134,7 +3131,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/mpm.html">
+<a class="md-nav__link" href="/main/graph/mpm.html">
 <span class="md-ellipsis">
     
   
@@ -3146,7 +3143,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/flow_with_demands.html">
+<a class="md-nav__link" href="/main/graph/flow_with_demands.html">
 <span class="md-ellipsis">
     
   
@@ -3158,7 +3155,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/min_cost_flow.html">
+<a class="md-nav__link" href="/main/graph/min_cost_flow.html">
 <span class="md-ellipsis">
     
   
@@ -3170,7 +3167,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/Assignment-problem-min-flow.html">
+<a class="md-nav__link" href="/main/graph/Assignment-problem-min-flow.html">
 <span class="md-ellipsis">
     
   
@@ -3182,7 +3179,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/stoer_wagner_mincut.html">
+<a class="md-nav__link" href="/main/graph/stoer_wagner_mincut.html">
 <span class="md-ellipsis">
     
   
@@ -3220,7 +3217,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/bipartite-check.html">
+<a class="md-nav__link" href="/main/graph/bipartite-check.html">
 <span class="md-ellipsis">
     
   
@@ -3232,7 +3229,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/kuhn_maximum_bipartite_matching.html">
+<a class="md-nav__link" href="/main/graph/kuhn_maximum_bipartite_matching.html">
 <span class="md-ellipsis">
     
   
@@ -3244,7 +3241,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/hungarian-algorithm.html">
+<a class="md-nav__link" href="/main/graph/hungarian-algorithm.html">
 <span class="md-ellipsis">
     
   
@@ -3282,7 +3279,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/topological-sort.html">
+<a class="md-nav__link" href="/main/graph/topological-sort.html">
 <span class="md-ellipsis">
     
   
@@ -3294,7 +3291,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/edge_vertex_connectivity.html">
+<a class="md-nav__link" href="/main/graph/edge_vertex_connectivity.html">
 <span class="md-ellipsis">
     
   
@@ -3306,7 +3303,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/tree_painting.html">
+<a class="md-nav__link" href="/main/graph/tree_painting.html">
 <span class="md-ellipsis">
     
   
@@ -3318,7 +3315,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/2SAT.html">
+<a class="md-nav__link" href="/main/graph/2SAT.html">
 <span class="md-ellipsis">
     
   
@@ -3330,7 +3327,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/hld.html">
+<a class="md-nav__link" href="/main/graph/hld.html">
 <span class="md-ellipsis">
     
   
@@ -3342,7 +3339,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/graph/centroid_decomposition.html">
+<a class="md-nav__link" href="/main/graph/centroid_decomposition.html">
 <span class="md-ellipsis">
     
   
@@ -3406,7 +3403,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/sequences/rmq.html">
+<a class="md-nav__link" href="/main/sequences/rmq.html">
 <span class="md-ellipsis">
     
   
@@ -3418,7 +3415,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/others/maximum_average_segment.html">
+<a class="md-nav__link" href="/main/others/maximum_average_segment.html">
 <span class="md-ellipsis">
     
   
@@ -3430,7 +3427,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/sequences/k-th.html">
+<a class="md-nav__link" href="/main/sequences/k-th.html">
 <span class="md-ellipsis">
     
   
@@ -3442,7 +3439,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/sequences/mex.html">
+<a class="md-nav__link" href="/main/sequences/mex.html">
 <span class="md-ellipsis">
     
   
@@ -3480,7 +3477,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/game_theory/games_on_graphs.html">
+<a class="md-nav__link" href="/main/game_theory/games_on_graphs.html">
 <span class="md-ellipsis">
     
   
@@ -3492,7 +3489,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/game_theory/sprague-grundy-nim.html">
+<a class="md-nav__link" href="/main/game_theory/sprague-grundy-nim.html">
 <span class="md-ellipsis">
     
   
@@ -3530,7 +3527,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/schedules/schedule_one_machine.html">
+<a class="md-nav__link" href="/main/schedules/schedule_one_machine.html">
 <span class="md-ellipsis">
     
   
@@ -3542,7 +3539,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/schedules/schedule_two_machines.html">
+<a class="md-nav__link" href="/main/schedules/schedule_two_machines.html">
 <span class="md-ellipsis">
     
   
@@ -3554,7 +3551,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/schedules/schedule-with-completion-duration.html">
+<a class="md-nav__link" href="/main/schedules/schedule-with-completion-duration.html">
 <span class="md-ellipsis">
     
   
@@ -3592,7 +3589,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/others/tortoise_and_hare.html">
+<a class="md-nav__link" href="/main/others/tortoise_and_hare.html">
 <span class="md-ellipsis">
     
   
@@ -3604,7 +3601,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/others/josephus_problem.html">
+<a class="md-nav__link" href="/main/others/josephus_problem.html">
 <span class="md-ellipsis">
     
   
@@ -3616,7 +3613,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/others/15-puzzle.html">
+<a class="md-nav__link" href="/main/others/15-puzzle.html">
 <span class="md-ellipsis">
     
   
@@ -3628,7 +3625,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/main/others/stern_brocot_tree_farey_sequences.html">
+<a class="md-nav__link" href="/main/others/stern_brocot_tree_farey_sequences.html">
 <span class="md-ellipsis">
     
   
@@ -3651,7 +3648,7 @@
 </div>
 </div>
 <div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset"><aside aria-label="Article preview" class="article-preview"><a href="https://github.com/cp-algorithms/cp-algorithms/tree/main">Main</a><label>Version <select aria-label="Article version" data-article="algebra/factorization.html" data-index="/cp-algorithms-previews/preview/index.json" data-pr="main"><option selected="" value="/cp-algorithms-previews/main/algebra/factorization.html">Main</option></select></label></aside>
+<article class="md-content__inner md-typeset"><aside aria-label="Article preview" class="article-preview"><a href="https://github.com/cp-algorithms/cp-algorithms/tree/main">Main</a><label>Version <select aria-label="Article version" data-article="algebra/factorization.html" data-index="/preview/index.json" data-pr="main"><option selected="" value="/main/algebra/factorization.html">Main</option></select></label></aside>
 <script type="text/javascript">
 window.onload = function() {
 	const newIssueURL = "https://github.com/cp-algorithms/cp-algorithms/issues/new";
@@ -3685,14 +3682,14 @@ Describe the issue of this article in detail.
   <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 22, 2026 05:53:36 UTC">August 22, 2026</span> 
 
 <!-- Tags -->
-<a class="md-tag" href="/cp-algorithms-previews/main/tags.html#tag:original">
+<a class="md-tag" href="/main/tags.html#tag:original">
       Original
     </a>
 </ul>
 <h1 id="integer-factorization">Integer factorization<a class="headerlink" href="#integer-factorization" title="Permanent link">¶</a></h1>
 <p>In this article we list several algorithms for the factorization of integers, each of which can be either fast or varying levels of slow depending on their input.</p>
 <p>Notice, if the number that you want to factorize is actually a prime number, most of the algorithms will run very slowly. This is especially true for Fermat's, Pollard's p-1 and Pollard's rho factorization algorithms.
-Therefore, it makes the most sense to perform a probabilistic (or a fast deterministic) <a href="/cp-algorithms-previews/main/algebra/primality_tests.html">primality test</a> before trying to factorize the number.</p>
+Therefore, it makes the most sense to perform a probabilistic (or a fast deterministic) <a href="/main/algebra/primality_tests.html">primality test</a> before trying to factorize the number.</p>
 <h2 id="trial-division">Trial division<a class="headerlink" href="#trial-division" title="Permanent link">¶</a></h2>
 <p>This is the most basic algorithm to find a prime factorization.</p>
 <p>We divide by each possible divisor <span class="arithmatex">$d$</span>.
@@ -3772,7 +3769,7 @@ It is convenient to store the skipping strides in an array.</p>
 <p>If we continue exending this method to include even more primes, better percentages can be reached, but the skip lists will become larger. </p>
 <h3 id="precomputed-primes">Precomputed primes<a class="headerlink" href="#precomputed-primes" title="Permanent link">¶</a></h3>
 <p>Extending the wheel factorization method indefinitely, we will only be left with prime numbers to check. 
-A good way of checking this is to precompute all prime numbers with the <a href="/cp-algorithms-previews/main/algebra/sieve-of-eratosthenes.html">Sieve of Eratosthenes</a> until <span class="arithmatex">$\sqrt{n}$</span>, and test them individually.</p>
+A good way of checking this is to precompute all prime numbers with the <a href="/main/algebra/sieve-of-eratosthenes.html">Sieve of Eratosthenes</a> until <span class="arithmatex">$\sqrt{n}$</span>, and test them individually.</p>
 <div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="w"> </span><span class="n">primes</span><span class="p">;</span>
 
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="w"> </span><span class="n">trial_division4</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -3817,7 +3814,7 @@ By looking at the squares <span class="arithmatex">$a^2$</span> modulo a fixed s
 E.g. the prime factorization of <span class="arithmatex">$4817191$</span> is <span class="arithmatex">$1303 \cdot 3697$</span>.
 And the values, <span class="arithmatex">$1303 - 1$</span> and <span class="arithmatex">$3697 - 1$</span>, are <span class="arithmatex">$31$</span>-powersmooth and <span class="arithmatex">$16$</span>-powersmooth respectively, because <span class="arithmatex">$1303 - 1 = 2 \cdot 3 \cdot 7 \cdot 31$</span> and <span class="arithmatex">$3697 - 1 = 2^4 \cdot 3 \cdot 7 \cdot 11$</span>.
 In 1974 John Pollard invented a method to extract factors <span class="arithmatex">$p$</span>, s.t. <span class="arithmatex">$p-1$</span> is <span class="arithmatex">$\mathrm{B}$</span>-powersmooth, from a composite number.</p>
-<p>The idea comes from <a href="/cp-algorithms-previews/main/algebra/phi-function.html#application">Fermat's little theorem</a>.
+<p>The idea comes from <a href="/main/algebra/phi-function.html#application">Fermat's little theorem</a>.
 Let a factorization of <span class="arithmatex">$n$</span> be <span class="arithmatex">$n = p \cdot q$</span>.
 It says that if <span class="arithmatex">$a$</span> is coprime to <span class="arithmatex">$p$</span>, the following statement holds:</p>
 <div class="arithmatex">$$a^{p - 1} \equiv 1 \pmod{p}$$</div>
@@ -3825,7 +3822,7 @@ It says that if <span class="arithmatex">$a$</span> is coprime to <span class="a
 <div class="arithmatex">$${\left(a^{(p - 1)}\right)}^k \equiv a^{k \cdot (p - 1)} \equiv 1 \pmod{p}.$$</div>
 <p>So for any <span class="arithmatex">$M$</span> with <span class="arithmatex">$p - 1 ~|~ M$</span> we know that <span class="arithmatex">$a^M \equiv 1$</span>.
 This means that <span class="arithmatex">$a^M - 1 = p \cdot r$</span>, and because of that also <span class="arithmatex">$p ~|~ \gcd(a^M - 1, n)$</span>.</p>
-<p>Therefore, if <span class="arithmatex">$p - 1$</span> for a factor <span class="arithmatex">$p$</span> of <span class="arithmatex">$n$</span> divides <span class="arithmatex">$M$</span>, we can extract a factor using <a href="/cp-algorithms-previews/main/algebra/euclid-algorithm.html">Euclid's algorithm</a>.</p>
+<p>Therefore, if <span class="arithmatex">$p - 1$</span> for a factor <span class="arithmatex">$p$</span> of <span class="arithmatex">$n$</span> divides <span class="arithmatex">$M$</span>, we can extract a factor using <a href="/main/algebra/euclid-algorithm.html">Euclid's algorithm</a>.</p>
 <p>It is clear, that the smallest <span class="arithmatex">$M$</span> that is a multiple of every <span class="arithmatex">$\mathrm{B}$</span>-powersmooth number is <span class="arithmatex">$\text{lcm}(1,~2~,3~,4~,~\dots,~B)$</span>.
 Or alternatively:</p>
 <div class="arithmatex">$$M = \prod_{\text{prime } q \le B} q^{\lfloor \log_q B \rfloor}$$</div>
@@ -3878,7 +3875,7 @@ If <span class="arithmatex">$p$</span> is smaller than <span class="arithmatex">
 <p>Here is a visualization of such a sequence <span class="arithmatex">$\{x_i \bmod p\}$</span> with <span class="arithmatex">$n = 2206637$</span>, <span class="arithmatex">$p = 317$</span>, <span class="arithmatex">$x_0 = 2$</span> and <span class="arithmatex">$f(x) = x^2 + 1$</span>.
 From the form of the sequence you can see very clearly why the algorithm is called Pollard's <span class="arithmatex">$\rho$</span> algorithm.</p>
 <div style="text-align: center;">
-<img alt="Pollard's rho visualization" src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/algebra/pollard_rho.png"/>
+<img alt="Pollard's rho visualization" src="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/algebra/pollard_rho.png"/>
 </div>
 <p>Yet, there is still an open question.
 How can we exploit the properties of the sequence <span class="arithmatex">$\{x_i \bmod p\}$</span> to our advantage without even knowing the number <span class="arithmatex">$p$</span> itself?</p>
@@ -3894,7 +3891,7 @@ In this case we haven't found a proper factor, so we must repeat the algorithm w
 During each iteration, the first pointer will advance one element over, while the second pointer advances to every other element. 
 Using this idea it is easy to observe that if there is a cycle, at some point the second pointer will come around to meet the first one during the loops. 
 If the cycle length is <span class="arithmatex">$\lambda$</span> and the <span class="arithmatex">$\mu$</span> is the first index at which the cycle starts, then the algorithm will run in <span class="arithmatex">$O(\lambda + \mu)$</span> time.</p>
-<p>This algorithm is also known as the <a href="/cp-algorithms-previews/main/others/tortoise_and_hare.html">Tortoise and Hare algorithm</a>, based on the tale in which a tortoise (the slow pointer) and a hare (the faster pointer) have a race.</p>
+<p>This algorithm is also known as the <a href="/main/others/tortoise_and_hare.html">Tortoise and Hare algorithm</a>, based on the tale in which a tortoise (the slow pointer) and a hare (the faster pointer) have a race.</p>
 <p>It is actually possible to determine the parameter <span class="arithmatex">$\lambda$</span> and <span class="arithmatex">$\mu$</span> using this algorithm (also in <span class="arithmatex">$O(\lambda + \mu)$</span> time and <span class="arithmatex">$O(1)$</span> space).
 When a cycle is detected, the algorithm will return 'True'. 
 If the sequence doesn't have a cycle, then the function will loop endlessly.
@@ -3949,7 +3946,7 @@ i &amp; x_i \bmod n &amp; x_{2i} \bmod n &amp; x_i \bmod 317 &amp; x_{2i} \bmod 
 \hline
 \end{array}$$</div>
 <p>The implementation uses a function <code>mult</code>, that multiplies two integers <span class="arithmatex">$\le 10^{18}$</span> without overflow by using a GCC's type <code>__int128</code> for 128-bit integer.
-If GCC is not available, you can using a similar idea as <a href="/cp-algorithms-previews/main/algebra/binary-exp.html">binary exponentiation</a>.</p>
+If GCC is not available, you can using a similar idea as <a href="/main/algebra/binary-exp.html">binary exponentiation</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">mult</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -3961,7 +3958,7 @@ If GCC is not available, you can using a similar idea as <a href="/cp-algorithms
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Alternatively you can also implement the <a href="/cp-algorithms-previews/main/algebra/montgomery_multiplication.html">Montgomery multiplication</a>.</p>
+<p>Alternatively you can also implement the <a href="/main/algebra/montgomery_multiplication.html">Montgomery multiplication</a>.</p>
 <p>As stated previously, if <span class="arithmatex">$n$</span> is composite and the algorithm returns <span class="arithmatex">$n$</span> as factor, you have to repeat the procedure with different parameters <span class="arithmatex">$x_0$</span> and <span class="arithmatex">$c$</span>.
 E.g. the choice <span class="arithmatex">$x_0 = c = 1$</span> will not factor <span class="arithmatex">$25 = 5 \cdot 5$</span>.
 The algorithm will return <span class="arithmatex">$25$</span>.
@@ -4069,11 +4066,11 @@ In addition, instead of performing the <span class="arithmatex">$\gcd$</span> co
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "/cp-algorithms-previews/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/bundle.c21346df.min.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/config.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/sidebar-toggle-sync.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/donation-banner.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/assets/javascripts/bundle.c21346df.min.js"></script>
+<script src="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/config.js"></script>
+<script src="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/sidebar-toggle-sync.js"></script>
+<script src="/preview/assets/8c33d8e2a7783a7b86528fdb2b9e099ea9b79cb2490c0f66b1ff36131f09ae07/javascript/donation-banner.js"></script>
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>

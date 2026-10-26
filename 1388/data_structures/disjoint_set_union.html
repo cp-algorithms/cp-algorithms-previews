@@ -7,21 +7,21 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="The goal of this project is to translate the wonderful resource http://e-maxx.ru/algo which provides descriptions of many algorithms and data structures especially popular in field of competitive programming. Moreover we want to improve the collected knowledge by extending the articles and adding new articles to the collection." name="description"/>
 <link href="https://cp-algorithms.com/data_structures/disjoint_set_union.html" rel="canonical"/>
-<link href="/cp-algorithms-previews/1388/data_structures/sparse-table.html" rel="prev"/>
-<link href="/cp-algorithms-previews/1388/data_structures/fenwick.html" rel="next"/>
-<link href="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/favicon.ico" rel="icon"/>
+<link href="/1388/data_structures/sparse-table.html" rel="prev"/>
+<link href="/1388/data_structures/fenwick.html" rel="next"/>
+<link href="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.21" name="generator"/>
 <title>Disjoint Set Union - Algorithms for Competitive Programming</title>
-<link href="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/stylesheets/main.2a3383ac.min.css" rel="stylesheet"/>
-<link href="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/stylesheets/main.2a3383ac.min.css" rel="stylesheet"/>
+<link href="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/stylesheets/extra.css" rel="stylesheet"/>
+<link href="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7FLS2HCYHH"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7FLS2HCYHH",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7FLS2HCYHH",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-<script src="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/cp-algorithms-previews/preview/selector.css" rel="stylesheet"/><script defer="" src="/cp-algorithms-previews/preview/selector.js"></script></head>
+<script src="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/preview/selector.css" rel="stylesheet"/><script defer="" src="/preview/selector.js"></script></head>
 <body data-md-color-accent="indigo" data-md-color-primary="deep-purple" data-md-color-scheme="cpalgo" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -45,8 +45,8 @@
     }
   </script>
 <nav aria-label="header.title" class="md-header__inner md-grid">
-<a aria-label="Algorithms for Competitive Programming" class="md-header__button md-logo" data-md-component="logo" href="/cp-algorithms-previews/1388/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/favicon.ico"/>
+<a aria-label="Algorithms for Competitive Programming" class="md-header__button md-logo" data-md-component="logo" href="/1388/index.html" title="Algorithms for Competitive Programming">
+<img alt="logo" src="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/favicon.ico"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -55,7 +55,7 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">
-<a aria-label="Algorithms for Competitive Programming" data-md-component="logo" href="/cp-algorithms-previews/1388/index.html" title="Algorithms for Competitive Programming">
+<a aria-label="Algorithms for Competitive Programming" data-md-component="logo" href="/1388/index.html" title="Algorithms for Competitive Programming">
               Algorithms for Competitive Programming
             </a>
 </span>
@@ -144,8 +144,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Algorithms for Competitive Programming" class="md-nav__button md-logo" data-md-component="logo" href="/cp-algorithms-previews/1388/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/favicon.ico"/>
+<a aria-label="Algorithms for Competitive Programming" class="md-nav__button md-logo" data-md-component="logo" href="/1388/index.html" title="Algorithms for Competitive Programming">
+<img alt="logo" src="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/favicon.ico"/>
 </a>
     Algorithms for Competitive Programming
   </label>
@@ -176,7 +176,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/index.html">
+<a class="md-nav__link" href="/1388/index.html">
 <span class="md-ellipsis">
     Main Page
     
@@ -184,7 +184,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/navigation.html">
+<a class="md-nav__link" href="/1388/navigation.html">
 <span class="md-ellipsis">
     Navigation
     
@@ -192,7 +192,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/tags.html">
+<a class="md-nav__link" href="/1388/tags.html">
 <span class="md-ellipsis">
     Tag index
     
@@ -200,7 +200,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/contrib.html">
+<a class="md-nav__link" href="/1388/contrib.html">
 <span class="md-ellipsis">
     How to Contribute
     
@@ -208,7 +208,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/code_of_conduct.html">
+<a class="md-nav__link" href="/1388/code_of_conduct.html">
 <span class="md-ellipsis">
     Code of conduct
     
@@ -216,7 +216,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/preview.html">
+<a class="md-nav__link" href="/1388/preview.html">
 <span class="md-ellipsis">
     Preview
     
@@ -257,7 +257,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/binary-exp.html">
+<a class="md-nav__link" href="/1388/algebra/binary-exp.html">
 <span class="md-ellipsis">
     Binary Exponentiation
     
@@ -265,7 +265,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/euclid-algorithm.html">
+<a class="md-nav__link" href="/1388/algebra/euclid-algorithm.html">
 <span class="md-ellipsis">
     Euclidean algorithm for computing the greatest common divisor
     
@@ -273,7 +273,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/extended-euclid-algorithm.html">
+<a class="md-nav__link" href="/1388/algebra/extended-euclid-algorithm.html">
 <span class="md-ellipsis">
     Extended Euclidean Algorithm
     
@@ -281,7 +281,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/linear-diophantine-equation.html">
+<a class="md-nav__link" href="/1388/algebra/linear-diophantine-equation.html">
 <span class="md-ellipsis">
     Linear Diophantine Equations
     
@@ -289,7 +289,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/fibonacci-numbers.html">
+<a class="md-nav__link" href="/1388/algebra/fibonacci-numbers.html">
 <span class="md-ellipsis">
     Fibonacci Numbers
     
@@ -315,7 +315,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/sieve-of-eratosthenes.html">
+<a class="md-nav__link" href="/1388/algebra/sieve-of-eratosthenes.html">
 <span class="md-ellipsis">
     Sieve of Eratosthenes
     
@@ -323,7 +323,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/prime-sieve-linear.html">
+<a class="md-nav__link" href="/1388/algebra/prime-sieve-linear.html">
 <span class="md-ellipsis">
     Linear Sieve
     
@@ -331,7 +331,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/primality_tests.html">
+<a class="md-nav__link" href="/1388/algebra/primality_tests.html">
 <span class="md-ellipsis">
     Primality tests
     
@@ -339,7 +339,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/factorization.html">
+<a class="md-nav__link" href="/1388/algebra/factorization.html">
 <span class="md-ellipsis">
     Integer factorization
     
@@ -365,7 +365,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/phi-function.html">
+<a class="md-nav__link" href="/1388/algebra/phi-function.html">
 <span class="md-ellipsis">
     Euler's totient function
     
@@ -373,7 +373,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/divisors.html">
+<a class="md-nav__link" href="/1388/algebra/divisors.html">
 <span class="md-ellipsis">
     Number of divisors / sum of divisors
     
@@ -399,7 +399,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/module-inverse.html">
+<a class="md-nav__link" href="/1388/algebra/module-inverse.html">
 <span class="md-ellipsis">
     Modular Inverse
     
@@ -407,7 +407,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/linear_congruence_equation.html">
+<a class="md-nav__link" href="/1388/algebra/linear_congruence_equation.html">
 <span class="md-ellipsis">
     Linear Congruence Equation
     
@@ -415,7 +415,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/chinese-remainder-theorem.html">
+<a class="md-nav__link" href="/1388/algebra/chinese-remainder-theorem.html">
 <span class="md-ellipsis">
     Chinese Remainder Theorem
     
@@ -423,7 +423,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/garners-algorithm.html">
+<a class="md-nav__link" href="/1388/algebra/garners-algorithm.html">
 <span class="md-ellipsis">
     Garner's Algorithm
     
@@ -431,7 +431,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/factorial-modulo.html">
+<a class="md-nav__link" href="/1388/algebra/factorial-modulo.html">
 <span class="md-ellipsis">
     Factorial modulo p
     
@@ -439,7 +439,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/discrete-log.html">
+<a class="md-nav__link" href="/1388/algebra/discrete-log.html">
 <span class="md-ellipsis">
     Discrete Log
     
@@ -447,7 +447,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/primitive-root.html">
+<a class="md-nav__link" href="/1388/algebra/primitive-root.html">
 <span class="md-ellipsis">
     Primitive Root
     
@@ -455,7 +455,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/discrete-root.html">
+<a class="md-nav__link" href="/1388/algebra/discrete-root.html">
 <span class="md-ellipsis">
     Discrete Root
     
@@ -463,7 +463,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/montgomery_multiplication.html">
+<a class="md-nav__link" href="/1388/algebra/montgomery_multiplication.html">
 <span class="md-ellipsis">
     Montgomery Multiplication
     
@@ -489,7 +489,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/balanced-ternary.html">
+<a class="md-nav__link" href="/1388/algebra/balanced-ternary.html">
 <span class="md-ellipsis">
     Balanced Ternary
     
@@ -497,7 +497,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/gray-code.html">
+<a class="md-nav__link" href="/1388/algebra/gray-code.html">
 <span class="md-ellipsis">
     Gray code
     
@@ -523,7 +523,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/bit-manipulation.html">
+<a class="md-nav__link" href="/1388/algebra/bit-manipulation.html">
 <span class="md-ellipsis">
     Bit manipulation
     
@@ -531,7 +531,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/all-submasks.html">
+<a class="md-nav__link" href="/1388/algebra/all-submasks.html">
 <span class="md-ellipsis">
     Enumerating submasks of a bitmask
     
@@ -539,7 +539,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/big-integer.html">
+<a class="md-nav__link" href="/1388/algebra/big-integer.html">
 <span class="md-ellipsis">
     Arbitrary-Precision Arithmetic
     
@@ -547,7 +547,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/fft.html">
+<a class="md-nav__link" href="/1388/algebra/fft.html">
 <span class="md-ellipsis">
     Fast Fourier transform
     
@@ -555,7 +555,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/polynomial.html">
+<a class="md-nav__link" href="/1388/algebra/polynomial.html">
 <span class="md-ellipsis">
     Operations on polynomials and series
     
@@ -563,7 +563,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/continued-fractions.html">
+<a class="md-nav__link" href="/1388/algebra/continued-fractions.html">
 <span class="md-ellipsis">
     Continued fractions
     
@@ -571,7 +571,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/factoring-exp.html">
+<a class="md-nav__link" href="/1388/algebra/factoring-exp.html">
 <span class="md-ellipsis">
     Factoring Exponentiation
     
@@ -615,7 +615,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/data_structures/stack_queue_modification.html">
+<a class="md-nav__link" href="/1388/data_structures/stack_queue_modification.html">
 <span class="md-ellipsis">
     Minimum Stack / Minimum Queue
     
@@ -623,7 +623,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/data_structures/sparse-table.html">
+<a class="md-nav__link" href="/1388/data_structures/sparse-table.html">
 <span class="md-ellipsis">
     Sparse Table
     
@@ -657,7 +657,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<a class="md-nav__link md-nav__link--active" href="/cp-algorithms-previews/1388/data_structures/disjoint_set_union.html">
+<a class="md-nav__link md-nav__link--active" href="/1388/data_structures/disjoint_set_union.html">
 <span class="md-ellipsis">
     Disjoint Set Union
     
@@ -814,7 +814,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/data_structures/fenwick.html">
+<a class="md-nav__link" href="/1388/data_structures/fenwick.html">
 <span class="md-ellipsis">
     Fenwick Tree
     
@@ -822,7 +822,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/data_structures/sqrt_decomposition.html">
+<a class="md-nav__link" href="/1388/data_structures/sqrt_decomposition.html">
 <span class="md-ellipsis">
     Sqrt Decomposition
     
@@ -830,7 +830,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/data_structures/segment_tree.html">
+<a class="md-nav__link" href="/1388/data_structures/segment_tree.html">
 <span class="md-ellipsis">
     Segment Tree
     
@@ -838,7 +838,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/data_structures/treap.html">
+<a class="md-nav__link" href="/1388/data_structures/treap.html">
 <span class="md-ellipsis">
     Treap
     
@@ -846,7 +846,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/data_structures/sqrt-tree.html">
+<a class="md-nav__link" href="/1388/data_structures/sqrt-tree.html">
 <span class="md-ellipsis">
     Sqrt Tree
     
@@ -854,7 +854,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/data_structures/randomized_heap.html">
+<a class="md-nav__link" href="/1388/data_structures/randomized_heap.html">
 <span class="md-ellipsis">
     Randomized Heap
     
@@ -880,7 +880,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/data_structures/deleting_in_log_n.html">
+<a class="md-nav__link" href="/1388/data_structures/deleting_in_log_n.html">
 <span class="md-ellipsis">
     Deleting from a data structure in O(T(n) log n)
     
@@ -909,7 +909,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/dynamic_programming/intro-to-dp.html">
+<a class="md-nav__link" href="/1388/dynamic_programming/intro-to-dp.html">
 <span class="md-ellipsis">
     Introduction to Dynamic Programming
     
@@ -917,7 +917,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/dynamic_programming/knapsack.html">
+<a class="md-nav__link" href="/1388/dynamic_programming/knapsack.html">
 <span class="md-ellipsis">
     Knapsack Problem
     
@@ -925,7 +925,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/dynamic_programming/longest_increasing_subsequence.html">
+<a class="md-nav__link" href="/1388/dynamic_programming/longest_increasing_subsequence.html">
 <span class="md-ellipsis">
     Longest increasing subsequence
     
@@ -948,7 +948,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/dynamic_programming/divide-and-conquer-dp.html">
+<a class="md-nav__link" href="/1388/dynamic_programming/divide-and-conquer-dp.html">
 <span class="md-ellipsis">
     Divide and Conquer DP
     
@@ -956,7 +956,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/dynamic_programming/knuth-optimization.html">
+<a class="md-nav__link" href="/1388/dynamic_programming/knuth-optimization.html">
 <span class="md-ellipsis">
     Knuth's Optimization
     
@@ -982,7 +982,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/dynamic_programming/profile-dynamics.html">
+<a class="md-nav__link" href="/1388/dynamic_programming/profile-dynamics.html">
 <span class="md-ellipsis">
     Dynamic Programming on Broken Profile. Problem "Parquet"
     
@@ -990,7 +990,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/dynamic_programming/zero_matrix.html">
+<a class="md-nav__link" href="/1388/dynamic_programming/zero_matrix.html">
 <span class="md-ellipsis">
     Finding the largest zero submatrix
     
@@ -1034,7 +1034,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/string-hashing.html">
+<a class="md-nav__link" href="/1388/string/string-hashing.html">
 <span class="md-ellipsis">
     String Hashing
     
@@ -1042,7 +1042,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/rabin-karp.html">
+<a class="md-nav__link" href="/1388/string/rabin-karp.html">
 <span class="md-ellipsis">
     Rabin-Karp for String Matching
     
@@ -1050,7 +1050,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/prefix-function.html">
+<a class="md-nav__link" href="/1388/string/prefix-function.html">
 <span class="md-ellipsis">
     Prefix function - Knuth-Morris-Pratt
     
@@ -1058,7 +1058,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/z-function.html">
+<a class="md-nav__link" href="/1388/string/z-function.html">
 <span class="md-ellipsis">
     Z-function
     
@@ -1066,7 +1066,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/suffix-array.html">
+<a class="md-nav__link" href="/1388/string/suffix-array.html">
 <span class="md-ellipsis">
     Suffix Array
     
@@ -1074,7 +1074,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/aho_corasick.html">
+<a class="md-nav__link" href="/1388/string/aho_corasick.html">
 <span class="md-ellipsis">
     Aho-Corasick algorithm
     
@@ -1100,7 +1100,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/suffix-tree-ukkonen.html">
+<a class="md-nav__link" href="/1388/string/suffix-tree-ukkonen.html">
 <span class="md-ellipsis">
     Suffix Tree
     
@@ -1108,7 +1108,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/suffix-automaton.html">
+<a class="md-nav__link" href="/1388/string/suffix-automaton.html">
 <span class="md-ellipsis">
     Suffix Automaton
     
@@ -1116,7 +1116,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/lyndon_factorization.html">
+<a class="md-nav__link" href="/1388/string/lyndon_factorization.html">
 <span class="md-ellipsis">
     Lyndon factorization
     
@@ -1142,7 +1142,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/expression_parsing.html">
+<a class="md-nav__link" href="/1388/string/expression_parsing.html">
 <span class="md-ellipsis">
     Expression parsing
     
@@ -1150,7 +1150,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/manacher.html">
+<a class="md-nav__link" href="/1388/string/manacher.html">
 <span class="md-ellipsis">
     Manacher's Algorithm - Finding all sub-palindromes in O(N)
     
@@ -1158,7 +1158,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/string/main_lorentz.html">
+<a class="md-nav__link" href="/1388/string/main_lorentz.html">
 <span class="md-ellipsis">
     Finding repetitions
     
@@ -1202,7 +1202,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/linear_algebra/linear-system-gauss.html">
+<a class="md-nav__link" href="/1388/linear_algebra/linear-system-gauss.html">
 <span class="md-ellipsis">
     Gauss &amp; System of Linear Equations
     
@@ -1210,7 +1210,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/linear_algebra/determinant-gauss.html">
+<a class="md-nav__link" href="/1388/linear_algebra/determinant-gauss.html">
 <span class="md-ellipsis">
     Gauss &amp; Determinant
     
@@ -1218,7 +1218,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/linear_algebra/determinant-kraut.html">
+<a class="md-nav__link" href="/1388/linear_algebra/determinant-kraut.html">
 <span class="md-ellipsis">
     Kraut &amp; Determinant
     
@@ -1226,7 +1226,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/linear_algebra/rank-matrix.html">
+<a class="md-nav__link" href="/1388/linear_algebra/rank-matrix.html">
 <span class="md-ellipsis">
     Rank of a matrix
     
@@ -1270,7 +1270,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/algebra/factorial-divisors.html">
+<a class="md-nav__link" href="/1388/algebra/factorial-divisors.html">
 <span class="md-ellipsis">
     Finding Power of Factorial Divisor
     
@@ -1278,7 +1278,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/combinatorics/binomial-coefficients.html">
+<a class="md-nav__link" href="/1388/combinatorics/binomial-coefficients.html">
 <span class="md-ellipsis">
     Binomial Coefficients
     
@@ -1286,7 +1286,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/combinatorics/catalan-numbers.html">
+<a class="md-nav__link" href="/1388/combinatorics/catalan-numbers.html">
 <span class="md-ellipsis">
     Catalan Numbers
     
@@ -1312,7 +1312,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/combinatorics/inclusion-exclusion.html">
+<a class="md-nav__link" href="/1388/combinatorics/inclusion-exclusion.html">
 <span class="md-ellipsis">
     The Inclusion-Exclusion Principle
     
@@ -1320,7 +1320,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/combinatorics/burnside.html">
+<a class="md-nav__link" href="/1388/combinatorics/burnside.html">
 <span class="md-ellipsis">
     Burnside's lemma / Pólya enumeration theorem
     
@@ -1328,7 +1328,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/combinatorics/stars_and_bars.html">
+<a class="md-nav__link" href="/1388/combinatorics/stars_and_bars.html">
 <span class="md-ellipsis">
     Stars and bars
     
@@ -1336,7 +1336,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/combinatorics/generating_combinations.html">
+<a class="md-nav__link" href="/1388/combinatorics/generating_combinations.html">
 <span class="md-ellipsis">
     Generating all K-combinations
     
@@ -1362,7 +1362,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/combinatorics/bishops-on-chessboard.html">
+<a class="md-nav__link" href="/1388/combinatorics/bishops-on-chessboard.html">
 <span class="md-ellipsis">
     Placing Bishops on a Chessboard
     
@@ -1370,7 +1370,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/combinatorics/bracket_sequences.html">
+<a class="md-nav__link" href="/1388/combinatorics/bracket_sequences.html">
 <span class="md-ellipsis">
     Balanced bracket sequences
     
@@ -1378,7 +1378,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/combinatorics/counting_labeled_graphs.html">
+<a class="md-nav__link" href="/1388/combinatorics/counting_labeled_graphs.html">
 <span class="md-ellipsis">
     Counting labeled graphs
     
@@ -1422,7 +1422,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/num_methods/binary_search.html">
+<a class="md-nav__link" href="/1388/num_methods/binary_search.html">
 <span class="md-ellipsis">
     Binary Search
     
@@ -1430,7 +1430,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/num_methods/ternary_search.html">
+<a class="md-nav__link" href="/1388/num_methods/ternary_search.html">
 <span class="md-ellipsis">
     Ternary Search
     
@@ -1438,7 +1438,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/num_methods/roots_newton.html">
+<a class="md-nav__link" href="/1388/num_methods/roots_newton.html">
 <span class="md-ellipsis">
     Newton's method for finding roots
     
@@ -1446,7 +1446,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/num_methods/simulated_annealing.html">
+<a class="md-nav__link" href="/1388/num_methods/simulated_annealing.html">
 <span class="md-ellipsis">
     Simulated Annealing
     
@@ -1472,7 +1472,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/num_methods/simpson-integration.html">
+<a class="md-nav__link" href="/1388/num_methods/simpson-integration.html">
 <span class="md-ellipsis">
     Integration by Simpson's formula
     
@@ -1516,7 +1516,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/basic-geometry.html">
+<a class="md-nav__link" href="/1388/geometry/basic-geometry.html">
 <span class="md-ellipsis">
     Basic Geometry
     
@@ -1524,7 +1524,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/segment-to-line.html">
+<a class="md-nav__link" href="/1388/geometry/segment-to-line.html">
 <span class="md-ellipsis">
     Finding the equation of a line for a segment
     
@@ -1532,7 +1532,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/lines-intersection.html">
+<a class="md-nav__link" href="/1388/geometry/lines-intersection.html">
 <span class="md-ellipsis">
     Intersection Point of Lines
     
@@ -1540,7 +1540,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/check-segments-intersection.html">
+<a class="md-nav__link" href="/1388/geometry/check-segments-intersection.html">
 <span class="md-ellipsis">
     Check if two segments intersect
     
@@ -1548,7 +1548,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/segments-intersection.html">
+<a class="md-nav__link" href="/1388/geometry/segments-intersection.html">
 <span class="md-ellipsis">
     Intersection of Segments
     
@@ -1556,7 +1556,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/circle-line-intersection.html">
+<a class="md-nav__link" href="/1388/geometry/circle-line-intersection.html">
 <span class="md-ellipsis">
     Circle-Line Intersection
     
@@ -1564,7 +1564,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/circle-circle-intersection.html">
+<a class="md-nav__link" href="/1388/geometry/circle-circle-intersection.html">
 <span class="md-ellipsis">
     Circle-Circle Intersection
     
@@ -1572,7 +1572,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/tangents-to-two-circles.html">
+<a class="md-nav__link" href="/1388/geometry/tangents-to-two-circles.html">
 <span class="md-ellipsis">
     Common tangents to two circles
     
@@ -1580,7 +1580,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/length-of-segments-union.html">
+<a class="md-nav__link" href="/1388/geometry/length-of-segments-union.html">
 <span class="md-ellipsis">
     Length of the union of segments
     
@@ -1606,7 +1606,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/oriented-triangle-area.html">
+<a class="md-nav__link" href="/1388/geometry/oriented-triangle-area.html">
 <span class="md-ellipsis">
     Oriented area of a triangle
     
@@ -1614,7 +1614,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/area-of-simple-polygon.html">
+<a class="md-nav__link" href="/1388/geometry/area-of-simple-polygon.html">
 <span class="md-ellipsis">
     Area of simple polygon
     
@@ -1622,7 +1622,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/point-in-convex-polygon.html">
+<a class="md-nav__link" href="/1388/geometry/point-in-convex-polygon.html">
 <span class="md-ellipsis">
     Check if points belong to the convex polygon in O(log N)
     
@@ -1630,7 +1630,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/minkowski.html">
+<a class="md-nav__link" href="/1388/geometry/minkowski.html">
 <span class="md-ellipsis">
     Minkowski sum of convex polygons
     
@@ -1638,7 +1638,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/picks-theorem.html">
+<a class="md-nav__link" href="/1388/geometry/picks-theorem.html">
 <span class="md-ellipsis">
     Pick's Theorem - area of lattice polygons
     
@@ -1646,7 +1646,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/lattice-points.html">
+<a class="md-nav__link" href="/1388/geometry/lattice-points.html">
 <span class="md-ellipsis">
     Lattice points of non-lattice polygon
     
@@ -1672,7 +1672,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/convex-hull.html">
+<a class="md-nav__link" href="/1388/geometry/convex-hull.html">
 <span class="md-ellipsis">
     Convex hull construction
     
@@ -1680,7 +1680,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/convex_hull_trick.html">
+<a class="md-nav__link" href="/1388/geometry/convex_hull_trick.html">
 <span class="md-ellipsis">
     Convex hull trick and Li Chao tree
     
@@ -1706,7 +1706,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/intersecting_segments.html">
+<a class="md-nav__link" href="/1388/geometry/intersecting_segments.html">
 <span class="md-ellipsis">
     Search for a pair of intersecting segments
     
@@ -1732,7 +1732,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/planar.html">
+<a class="md-nav__link" href="/1388/geometry/planar.html">
 <span class="md-ellipsis">
     Finding faces of a planar graph
     
@@ -1740,7 +1740,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/point-location.html">
+<a class="md-nav__link" href="/1388/geometry/point-location.html">
 <span class="md-ellipsis">
     Point location in O(log N)
     
@@ -1766,7 +1766,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/nearest_points.html">
+<a class="md-nav__link" href="/1388/geometry/nearest_points.html">
 <span class="md-ellipsis">
     Finding the nearest pair of points
     
@@ -1774,7 +1774,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/delaunay.html">
+<a class="md-nav__link" href="/1388/geometry/delaunay.html">
 <span class="md-ellipsis">
     Delaunay triangulation and Voronoi diagram
     
@@ -1782,7 +1782,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/vertical_decomposition.html">
+<a class="md-nav__link" href="/1388/geometry/vertical_decomposition.html">
 <span class="md-ellipsis">
     Vertical decomposition
     
@@ -1790,7 +1790,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/halfplane-intersection.html">
+<a class="md-nav__link" href="/1388/geometry/halfplane-intersection.html">
 <span class="md-ellipsis">
     Half-plane intersection - S&amp;I Algorithm in O(N log N)
     
@@ -1798,7 +1798,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/manhattan-distance.html">
+<a class="md-nav__link" href="/1388/geometry/manhattan-distance.html">
 <span class="md-ellipsis">
     Manhattan Distance
     
@@ -1806,7 +1806,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/geometry/enclosing-circle.html">
+<a class="md-nav__link" href="/1388/geometry/enclosing-circle.html">
 <span class="md-ellipsis">
     Minimum Enclosing Circle
     
@@ -1850,7 +1850,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/breadth-first-search.html">
+<a class="md-nav__link" href="/1388/graph/breadth-first-search.html">
 <span class="md-ellipsis">
     Breadth First Search
     
@@ -1858,7 +1858,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/depth-first-search.html">
+<a class="md-nav__link" href="/1388/graph/depth-first-search.html">
 <span class="md-ellipsis">
     Depth First Search
     
@@ -1884,7 +1884,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/search-for-connected-components.html">
+<a class="md-nav__link" href="/1388/graph/search-for-connected-components.html">
 <span class="md-ellipsis">
     Finding Connected Components
     
@@ -1892,7 +1892,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/bridge-searching.html">
+<a class="md-nav__link" href="/1388/graph/bridge-searching.html">
 <span class="md-ellipsis">
     Finding Bridges in O(N+M)
     
@@ -1900,7 +1900,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/bridge-searching-online.html">
+<a class="md-nav__link" href="/1388/graph/bridge-searching-online.html">
 <span class="md-ellipsis">
     Finding Bridges Online
     
@@ -1908,7 +1908,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/cutpoints.html">
+<a class="md-nav__link" href="/1388/graph/cutpoints.html">
 <span class="md-ellipsis">
     Finding Articulation Points in O(N+M)
     
@@ -1916,7 +1916,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/strongly-connected-components.html">
+<a class="md-nav__link" href="/1388/graph/strongly-connected-components.html">
 <span class="md-ellipsis">
     Strongly Connected Components and Condensation Graph
     
@@ -1924,7 +1924,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/strong-orientation.html">
+<a class="md-nav__link" href="/1388/graph/strong-orientation.html">
 <span class="md-ellipsis">
     Strong Orientation
     
@@ -1950,7 +1950,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/dijkstra.html">
+<a class="md-nav__link" href="/1388/graph/dijkstra.html">
 <span class="md-ellipsis">
     Dijkstra - finding shortest paths from given vertex
     
@@ -1958,7 +1958,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/dijkstra_sparse.html">
+<a class="md-nav__link" href="/1388/graph/dijkstra_sparse.html">
 <span class="md-ellipsis">
     Dijkstra on sparse graphs
     
@@ -1966,7 +1966,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/bellman_ford.html">
+<a class="md-nav__link" href="/1388/graph/bellman_ford.html">
 <span class="md-ellipsis">
     Bellman-Ford - finding shortest paths with negative weights
     
@@ -1974,7 +1974,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/01_bfs.html">
+<a class="md-nav__link" href="/1388/graph/01_bfs.html">
 <span class="md-ellipsis">
     0-1 BFS
     
@@ -1982,7 +1982,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/desopo_pape.html">
+<a class="md-nav__link" href="/1388/graph/desopo_pape.html">
 <span class="md-ellipsis">
     D´Esopo-Pape algorithm
     
@@ -2008,7 +2008,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/all-pair-shortest-path-floyd-warshall.html">
+<a class="md-nav__link" href="/1388/graph/all-pair-shortest-path-floyd-warshall.html">
 <span class="md-ellipsis">
     Floyd-Warshall - finding all shortest paths
     
@@ -2016,7 +2016,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/fixed_length_paths.html">
+<a class="md-nav__link" href="/1388/graph/fixed_length_paths.html">
 <span class="md-ellipsis">
     Number of paths of fixed length / Shortest paths of fixed length
     
@@ -2042,7 +2042,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/mst_prim.html">
+<a class="md-nav__link" href="/1388/graph/mst_prim.html">
 <span class="md-ellipsis">
     Minimum Spanning Tree - Prim's Algorithm
     
@@ -2050,7 +2050,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/mst_kruskal.html">
+<a class="md-nav__link" href="/1388/graph/mst_kruskal.html">
 <span class="md-ellipsis">
     Minimum Spanning Tree - Kruskal
     
@@ -2058,7 +2058,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/mst_kruskal_with_dsu.html">
+<a class="md-nav__link" href="/1388/graph/mst_kruskal_with_dsu.html">
 <span class="md-ellipsis">
     Minimum Spanning Tree - Kruskal with Disjoint Set Union
     
@@ -2066,7 +2066,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/second_best_mst.html">
+<a class="md-nav__link" href="/1388/graph/second_best_mst.html">
 <span class="md-ellipsis">
     Second best Minimum Spanning Tree - Using Kruskal and Lowest Common Ancestor
     
@@ -2074,7 +2074,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/kirchhoff-theorem.html">
+<a class="md-nav__link" href="/1388/graph/kirchhoff-theorem.html">
 <span class="md-ellipsis">
     Kirchhoff Theorem
     
@@ -2082,7 +2082,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/pruefer_code.html">
+<a class="md-nav__link" href="/1388/graph/pruefer_code.html">
 <span class="md-ellipsis">
     Prüfer code
     
@@ -2108,7 +2108,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/finding-cycle.html">
+<a class="md-nav__link" href="/1388/graph/finding-cycle.html">
 <span class="md-ellipsis">
     Checking a graph for acyclicity and finding a cycle in O(M)
     
@@ -2116,7 +2116,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/finding-negative-cycle-in-graph.html">
+<a class="md-nav__link" href="/1388/graph/finding-negative-cycle-in-graph.html">
 <span class="md-ellipsis">
     Finding a Negative Cycle in the Graph
     
@@ -2124,7 +2124,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/euler_path.html">
+<a class="md-nav__link" href="/1388/graph/euler_path.html">
 <span class="md-ellipsis">
     Eulerian Path
     
@@ -2150,7 +2150,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/lca.html">
+<a class="md-nav__link" href="/1388/graph/lca.html">
 <span class="md-ellipsis">
     Lowest Common Ancestor
     
@@ -2158,7 +2158,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/lca_binary_lifting.html">
+<a class="md-nav__link" href="/1388/graph/lca_binary_lifting.html">
 <span class="md-ellipsis">
     Lowest Common Ancestor - Binary Lifting
     
@@ -2166,7 +2166,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/lca_farachcoltonbender.html">
+<a class="md-nav__link" href="/1388/graph/lca_farachcoltonbender.html">
 <span class="md-ellipsis">
     Lowest Common Ancestor - Farach-Colton and Bender algorithm
     
@@ -2174,7 +2174,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/rmq_linear.html">
+<a class="md-nav__link" href="/1388/graph/rmq_linear.html">
 <span class="md-ellipsis">
     Solve RMQ by finding LCA
     
@@ -2182,7 +2182,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/lca_tarjan.html">
+<a class="md-nav__link" href="/1388/graph/lca_tarjan.html">
 <span class="md-ellipsis">
     Lowest Common Ancestor - Tarjan's off-line algorithm
     
@@ -2208,7 +2208,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/edmonds_karp.html">
+<a class="md-nav__link" href="/1388/graph/edmonds_karp.html">
 <span class="md-ellipsis">
     Maximum flow - Ford-Fulkerson and Edmonds-Karp
     
@@ -2216,7 +2216,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/push-relabel.html">
+<a class="md-nav__link" href="/1388/graph/push-relabel.html">
 <span class="md-ellipsis">
     Maximum flow - Push-relabel algorithm
     
@@ -2224,7 +2224,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/push-relabel-faster.html">
+<a class="md-nav__link" href="/1388/graph/push-relabel-faster.html">
 <span class="md-ellipsis">
     Maximum flow - Push-relabel algorithm improved
     
@@ -2232,7 +2232,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/dinic.html">
+<a class="md-nav__link" href="/1388/graph/dinic.html">
 <span class="md-ellipsis">
     Maximum flow - Dinic's algorithm
     
@@ -2240,7 +2240,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/mpm.html">
+<a class="md-nav__link" href="/1388/graph/mpm.html">
 <span class="md-ellipsis">
     Maximum flow - MPM algorithm
     
@@ -2248,7 +2248,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/flow_with_demands.html">
+<a class="md-nav__link" href="/1388/graph/flow_with_demands.html">
 <span class="md-ellipsis">
     Flows with demands
     
@@ -2256,7 +2256,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/min_cost_flow.html">
+<a class="md-nav__link" href="/1388/graph/min_cost_flow.html">
 <span class="md-ellipsis">
     Minimum-cost flow
     
@@ -2264,7 +2264,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/Assignment-problem-min-flow.html">
+<a class="md-nav__link" href="/1388/graph/Assignment-problem-min-flow.html">
 <span class="md-ellipsis">
     Assignment problem
     
@@ -2290,7 +2290,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/bipartite-check.html">
+<a class="md-nav__link" href="/1388/graph/bipartite-check.html">
 <span class="md-ellipsis">
     Bipartite Graph Check
     
@@ -2298,7 +2298,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/kuhn_maximum_bipartite_matching.html">
+<a class="md-nav__link" href="/1388/graph/kuhn_maximum_bipartite_matching.html">
 <span class="md-ellipsis">
     Kuhn's Algorithm - Maximum Bipartite Matching
     
@@ -2306,7 +2306,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/hungarian-algorithm.html">
+<a class="md-nav__link" href="/1388/graph/hungarian-algorithm.html">
 <span class="md-ellipsis">
     Hungarian Algorithm
     
@@ -2332,7 +2332,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/topological-sort.html">
+<a class="md-nav__link" href="/1388/graph/topological-sort.html">
 <span class="md-ellipsis">
     Topological Sorting
     
@@ -2340,7 +2340,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/edge_vertex_connectivity.html">
+<a class="md-nav__link" href="/1388/graph/edge_vertex_connectivity.html">
 <span class="md-ellipsis">
     Edge connectivity / Vertex connectivity
     
@@ -2348,7 +2348,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/tree_painting.html">
+<a class="md-nav__link" href="/1388/graph/tree_painting.html">
 <span class="md-ellipsis">
     Tree painting
     
@@ -2356,7 +2356,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/2SAT.html">
+<a class="md-nav__link" href="/1388/graph/2SAT.html">
 <span class="md-ellipsis">
     2-SAT
     
@@ -2364,7 +2364,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/graph/hld.html">
+<a class="md-nav__link" href="/1388/graph/hld.html">
 <span class="md-ellipsis">
     Heavy-light decomposition
     
@@ -2408,7 +2408,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/sequences/rmq.html">
+<a class="md-nav__link" href="/1388/sequences/rmq.html">
 <span class="md-ellipsis">
     RMQ task (Range Minimum Query - the smallest element in an interval)
     
@@ -2416,7 +2416,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/others/maximum_average_segment.html">
+<a class="md-nav__link" href="/1388/others/maximum_average_segment.html">
 <span class="md-ellipsis">
     Search the subsegment with the maximum/minimum sum
     
@@ -2424,7 +2424,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/sequences/k-th.html">
+<a class="md-nav__link" href="/1388/sequences/k-th.html">
 <span class="md-ellipsis">
     K-th order statistic in O(N)
     
@@ -2432,7 +2432,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/sequences/mex.html">
+<a class="md-nav__link" href="/1388/sequences/mex.html">
 <span class="md-ellipsis">
     MEX task (Minimal Excluded element in an array)
     
@@ -2458,7 +2458,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/game_theory/games_on_graphs.html">
+<a class="md-nav__link" href="/1388/game_theory/games_on_graphs.html">
 <span class="md-ellipsis">
     Games on arbitrary graphs
     
@@ -2466,7 +2466,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/game_theory/sprague-grundy-nim.html">
+<a class="md-nav__link" href="/1388/game_theory/sprague-grundy-nim.html">
 <span class="md-ellipsis">
     Sprague-Grundy theorem. Nim
     
@@ -2492,7 +2492,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/schedules/schedule_one_machine.html">
+<a class="md-nav__link" href="/1388/schedules/schedule_one_machine.html">
 <span class="md-ellipsis">
     Scheduling jobs on one machine
     
@@ -2500,7 +2500,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/schedules/schedule_two_machines.html">
+<a class="md-nav__link" href="/1388/schedules/schedule_two_machines.html">
 <span class="md-ellipsis">
     Scheduling jobs on two machines
     
@@ -2508,7 +2508,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/schedules/schedule-with-completion-duration.html">
+<a class="md-nav__link" href="/1388/schedules/schedule-with-completion-duration.html">
 <span class="md-ellipsis">
     Optimal schedule of jobs given their deadlines and durations
     
@@ -2534,7 +2534,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/others/pells_equation.html">
+<a class="md-nav__link" href="/1388/others/pells_equation.html">
 <span class="md-ellipsis">
     Pell's Equation
     
@@ -2542,7 +2542,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/others/tortoise_and_hare.html">
+<a class="md-nav__link" href="/1388/others/tortoise_and_hare.html">
 <span class="md-ellipsis">
     Tortoise and Hare Algorithm (Linked List cycle detection)
     
@@ -2550,7 +2550,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/others/josephus_problem.html">
+<a class="md-nav__link" href="/1388/others/josephus_problem.html">
 <span class="md-ellipsis">
     Josephus problem
     
@@ -2558,7 +2558,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/others/15-puzzle.html">
+<a class="md-nav__link" href="/1388/others/15-puzzle.html">
 <span class="md-ellipsis">
     15 Puzzle Game: Existence Of The Solution
     
@@ -2566,7 +2566,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="/cp-algorithms-previews/1388/others/stern_brocot_tree_farey_sequences.html">
+<a class="md-nav__link" href="/1388/others/stern_brocot_tree_farey_sequences.html">
 <span class="md-ellipsis">
     The Stern-Brocot Tree and Farey Sequences
     
@@ -2585,7 +2585,7 @@
 </div>
 </div>
 <div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset"><aside aria-label="Article preview" class="article-preview"><a href="https://github.com/cp-algorithms/cp-algorithms/pull/1388">PR #1388</a><a href="/cp-algorithms-previews/preview/1388/">Review pages</a><label>Version <select aria-label="Article version" data-article="data_structures/disjoint_set_union.html" data-index="/cp-algorithms-previews/preview/index.json" data-pr="1388"><option value="/cp-algorithms-previews/main/data_structures/disjoint_set_union.html">Main</option><option selected="" value="/cp-algorithms-previews/1388/data_structures/disjoint_set_union.html">PR #1388</option></select></label></aside><p>Preserved previous deployment; this preview does not represent the current PR head.</p>
+<article class="md-content__inner md-typeset"><aside aria-label="Article preview" class="article-preview"><a href="https://github.com/cp-algorithms/cp-algorithms/pull/1388">PR #1388</a><a href="/preview/1388/">Review pages</a><label>Version <select aria-label="Article version" data-article="data_structures/disjoint_set_union.html" data-index="/preview/index.json" data-pr="1388"><option value="/main/data_structures/disjoint_set_union.html">Main</option><option selected="" value="/1388/data_structures/disjoint_set_union.html">PR #1388</option></select></label></aside><p>Preserved previous deployment; this preview does not represent the current PR head.</p>
 <script type="text/javascript">
 window.onload = function() {
 	const newIssueURL = "https://github.com/cp-algorithms/cp-algorithms/issues/new";
@@ -2619,7 +2619,7 @@ Describe the issue of this article in detail.
   <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 12, 2024 10:13:20 UTC">October 12, 2024</span> 
 
 <!-- Tags -->
-<a class="md-tag" href="/cp-algorithms-previews/1388/tags.html#tag:translated">
+<a class="md-tag" href="/1388/tags.html#tag:translated">
       Translated
     </a>
 <a class="md-tag" href="https://e-maxx.ru/algo/dsu">
@@ -2650,7 +2650,7 @@ Otherwise they are in different sets.</li>
 <p>We will store the sets in the form of <strong>trees</strong>: each tree will correspond to one set.
 And the root of the tree will be the representative/leader of the set.</p>
 <p>In the following image you can see the representation of such trees.</p>
-<p><img alt="Example-image of the set representation with trees" src="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/data_structures/DSU_example.png"/></p>
+<p><img alt="Example-image of the set representation with trees" src="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/data_structures/DSU_example.png"/></p>
 <p>In the beginning, every element starts as a single set, therefore each vertex is its own tree.
 Then we combine the set containing the element 1 and the set containing the element 2.
 Then we combine the set containing the element 3 and the set containing the element 4.
@@ -2695,7 +2695,7 @@ Therefore we will consider two optimizations that will allow to significantly ac
 The trick is to make the paths for all those nodes shorter, by setting the parent of each visited vertex directly to <code>p</code>.</p>
 <p>You can see the operation in the following image.
 On the left there is a tree, and on the right side there is the compressed tree after calling <code>find_set(7)</code>, which shortens the paths for the visited nodes 7, 5, 3 and 2.</p>
-<p><img alt="Path compression of call find_set(7)" src="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/data_structures/DSU_path_compression.png"/></p>
+<p><img alt="Path compression of call find_set(7)" src="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/data_structures/DSU_path_compression.png"/></p>
 <p>The new implementation of <code>find_set</code> is as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">find_set</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">parent</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
@@ -2807,8 +2807,8 @@ And in benchmarks it performs a lot worse than union by size/rank or linking by 
 Initially we have an empty graph.
 We have to add vertices and undirected edges, and answer queries of the form <span class="arithmatex">$(a, b)$</span> - "are the vertices <span class="arithmatex">$a$</span> and <span class="arithmatex">$b$</span> in the same connected component of the graph?"</p>
 <p>Here we can directly apply the data structure, and get a solution that handles an addition of a vertex or an edge and a query in nearly constant time on average.</p>
-<p>This application is quite important, because nearly the same problem appears in <a href="/cp-algorithms-previews/1388/graph/mst_kruskal.html">Kruskal's algorithm for finding a minimum spanning tree</a>.
-Using DSU we can <a href="/cp-algorithms-previews/1388/graph/mst_kruskal_with_dsu.html">improve</a> the <span class="arithmatex">$O(m \log n + n^2)$</span> complexity to <span class="arithmatex">$O(m \log n)$</span>.</p>
+<p>This application is quite important, because nearly the same problem appears in <a href="/1388/graph/mst_kruskal.html">Kruskal's algorithm for finding a minimum spanning tree</a>.
+Using DSU we can <a href="/1388/graph/mst_kruskal_with_dsu.html">improve</a> the <span class="arithmatex">$O(m \log n + n^2)$</span> complexity to <span class="arithmatex">$O(m \log n)$</span>.</p>
 <h3 id="search-for-connected-components-in-an-image">Search for connected components in an image<a class="headerlink" href="#search-for-connected-components-in-an-image" title="Permanent link">¶</a></h3>
 <p>One of the applications of DSU is the following task:
 there is an image of <span class="arithmatex">$n \times m$</span> pixels.
@@ -2817,7 +2817,7 @@ You want to determine the size of each white connected component in the final im
 <p>For the solution we simply iterate over all white pixels in the image, for each cell iterate over its four neighbors, and if the neighbor is white call <code>union_sets</code>.
 Thus we will have a DSU with <span class="arithmatex">$n m$</span> nodes corresponding to image pixels.
 The resulting trees in the DSU are the desired connected components.</p>
-<p>The problem can also be solved by <a href="/cp-algorithms-previews/1388/graph/depth-first-search.html">DFS</a> or <a href="/cp-algorithms-previews/1388/graph/breadth-first-search.html">BFS</a>, but the method described here has an advantage:
+<p>The problem can also be solved by <a href="/1388/graph/depth-first-search.html">DFS</a> or <a href="/1388/graph/breadth-first-search.html">BFS</a>, but the method described here has an advantage:
 it can process the matrix row by row (i.e. to process a row we only need the previous and the current row, and only need a DSU built for the elements of one row) in <span class="arithmatex">$O(\min(n, m))$</span> memory.</p>
 <h3 id="store-additional-information-for-each-set">Store additional information for each set<a class="headerlink" href="#store-additional-information-for-each-set" title="Permanent link">¶</a></h3>
 <p>DSU allows you to easily store additional information in the sets.</p>
@@ -2985,8 +2985,8 @@ And we can also use Union by rank, if we store the actual leader in an separate 
 It is named after AmirReza Poorakhavan, who independently discovered and popularized this technique.
 Although this algorithm existed already before his discovery.</p>
 <h3 id="offline-lca-lowest-common-ancestor-in-a-tree-in-oalphan-on-average">Offline LCA (lowest common ancestor in a tree) in <span class="arithmatex">$O(\alpha(n))$</span> on average<a class="headerlink" href="#offline-lca-lowest-common-ancestor-in-a-tree-in-oalphan-on-average" title="Permanent link">¶</a></h3>
-<p>The algorithm for finding the LCA is discussed in the article <a href="/cp-algorithms-previews/1388/graph/lca_tarjan.html">Lowest Common Ancestor - Tarjan's off-line algorithm</a>.
-This algorithm compares favorable with other algorithms for finding the LCA due to its simplicity (especially compared to an optimal algorithm like the one from <a href="/cp-algorithms-previews/1388/graph/lca_farachcoltonbender.html">Farach-Colton and Bender</a>).</p>
+<p>The algorithm for finding the LCA is discussed in the article <a href="/1388/graph/lca_tarjan.html">Lowest Common Ancestor - Tarjan's off-line algorithm</a>.
+This algorithm compares favorable with other algorithms for finding the LCA due to its simplicity (especially compared to an optimal algorithm like the one from <a href="/1388/graph/lca_farachcoltonbender.html">Farach-Colton and Bender</a>).</p>
 <h3 id="storing-the-dsu-explicitly-in-a-set-list-applications-of-this-idea-when-merging-various-data-structures">Storing the DSU explicitly in a set list / Applications of this idea when merging various data structures<a class="headerlink" href="#storing-the-dsu-explicitly-in-a-set-list-applications-of-this-idea-when-merging-various-data-structures" title="Permanent link">¶</a></h3>
 <p>One of the alternative ways of storing the DSU is the preservation of each set in the form of an <strong>explicitly stored list of its elements</strong>.
 At the same time each element also stores the reference to the representative of his set.</p>
@@ -3037,7 +3037,7 @@ Thus the sum over all vertices gives <span class="arithmatex">$O(n \log n)$</spa
 we are given a tree, each leaf has a number assigned (same number can appear multiple times on different leaves).
 We want to compute the number of different numbers in the subtree for every node of the tree.</p>
 <p>Applying to this task the same idea it is possible to obtain this solution:
-we can implement a <a href="/cp-algorithms-previews/1388/graph/depth-first-search.html">DFS</a>, which will return a pointer to a set of integers - the list of numbers in that subtree.
+we can implement a <a href="/1388/graph/depth-first-search.html">DFS</a>, which will return a pointer to a set of integers - the list of numbers in that subtree.
 Then to get the answer for the current node (unless of course it is a leaf), we call DFS for all children of that node, and merge all the received sets together.
 The size of the resulting set will be the answer for the current node.
 To efficiently combine multiple sets we just apply the above-described recipe:
@@ -3054,7 +3054,7 @@ This means that we have no other choice but to re-root one of the trees (make th
 <p>At first glance it seems that this re-rooting is very costly and will greatly worsen the time complexity.
 Indeed, for rooting a tree at vertex <span class="arithmatex">$v$</span> we must go from the vertex to the old root and change directions in <code>parent[]</code> and <code>real_parent[]</code> for all nodes on that path.</p>
 <p>However in reality it isn't so bad, we can just re-root the smaller of the two trees similar to the ideas in the previous sections, and get <span class="arithmatex">$O(\log n)$</span> on average.</p>
-<p>More details (including proof of the time complexity) can be found in the article <a href="/cp-algorithms-previews/1388/graph/bridge-searching-online.html">Finding Bridges Online</a>.</p>
+<p>More details (including proof of the time complexity) can be found in the article <a href="/1388/graph/bridge-searching-online.html">Finding Bridges Online</a>.</p>
 <h2 id="historical-retrospective">Historical retrospective<a class="headerlink" href="#historical-retrospective" title="Permanent link">¶</a></h2>
 <p>The data structure DSU has been known for a long time.</p>
 <p>This way of storing this structure in the form <strong>of a forest of trees</strong> was apparently first described by Galler and Fisher in 1964 (Galler, Fisher, "An Improved Equivalence Algorithm), however the complete analysis of the time complexity was conducted much later.</p>
@@ -3116,10 +3116,10 @@ Later in 1985 he, along with Leeuwen, published multiple complexity analyses for
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "/cp-algorithms-previews/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/javascripts/bundle.f55a23d4.min.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/javascript/config.js"></script>
-<script src="/cp-algorithms-previews/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/javascript/donation-banner.js"></script>
+<script id="__config" type="application/json">{"base": "/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script src="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/javascript/config.js"></script>
+<script src="/preview/assets/5ff004105daef9cfcbf8cbfc2396086e2e01d4194089fd6b2b058b8680e6989a/javascript/donation-banner.js"></script>
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
