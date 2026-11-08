@@ -11,20 +11,20 @@
 <link href="/main/linear_algebra/determinant-gauss.html" rel="next"/>
 
 
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/favicon.ico" rel="icon"/>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.8.1" name="generator"/>
 <title>Gauss &amp; System of Linear Equations - Algorithms for Competitive Programming</title>
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/stylesheets/extra.css" rel="stylesheet"/>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7FLS2HCYHH"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7FLS2HCYHH",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7FLS2HCYHH",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/preview/selector.css" rel="stylesheet"/><script defer="" src="/preview/selector.js"></script></head>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/preview/selector.css" rel="stylesheet"/><script defer="" src="/preview/selector.js"></script></head>
 <body data-md-color-accent="indigo" data-md-color-primary="deep-purple" data-md-color-scheme="cpalgo" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -49,7 +49,7 @@
   </script>
 <nav aria-label="header.title" class="md-header__inner md-grid">
 <a aria-label="Algorithms for Competitive Programming" class="md-header__button md-logo" data-md-component="logo" href="/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/favicon.ico"/>
+<img alt="logo" src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/favicon.ico"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -149,7 +149,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Algorithms for Competitive Programming" class="md-nav__button md-logo" data-md-component="logo" href="/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/favicon.ico"/>
+<img alt="logo" src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/favicon.ico"/>
 </a>
     Algorithms for Competitive Programming
   </label>
@@ -3887,11 +3887,11 @@ In case <span class="arithmatex">$n = m$</span>, the complexity is simply <span 
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/javascripts/bundle.a5f9d56c.min.js"></script>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/javascript/config.js"></script>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/javascript/sidebar-toggle-sync.js"></script>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/javascript/donation-banner.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/javascripts/bundle.a5f9d56c.min.js"></script>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/javascript/config.js"></script>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/javascript/sidebar-toggle-sync.js"></script>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/javascript/donation-banner.js"></script>
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>

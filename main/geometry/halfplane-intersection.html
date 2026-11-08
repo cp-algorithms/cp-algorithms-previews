@@ -11,20 +11,20 @@
 <link href="/main/geometry/manhattan-distance.html" rel="next"/>
 
 
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/favicon.ico" rel="icon"/>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.8.1" name="generator"/>
 <title>Half-plane intersection - S&amp;I Algorithm in O(N log N) - Algorithms for Competitive Programming</title>
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/stylesheets/main.57a0d79d.min.css" rel="stylesheet"/>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/stylesheets/palette.fb2fffe2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/stylesheets/extra.css" rel="stylesheet"/>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7FLS2HCYHH"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7FLS2HCYHH",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7FLS2HCYHH",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-<link href="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/preview/selector.css" rel="stylesheet"/><script defer="" src="/preview/selector.js"></script></head>
+<link href="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/javascripts/toggle-sidebar.js"></script><meta content="noindex" name="robots"/><link href="/preview/selector.css" rel="stylesheet"/><script defer="" src="/preview/selector.js"></script></head>
 <body data-md-color-accent="indigo" data-md-color-primary="deep-purple" data-md-color-scheme="cpalgo" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -49,7 +49,7 @@
   </script>
 <nav aria-label="header.title" class="md-header__inner md-grid">
 <a aria-label="Algorithms for Competitive Programming" class="md-header__button md-logo" data-md-component="logo" href="/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/favicon.ico"/>
+<img alt="logo" src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/favicon.ico"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -149,7 +149,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Algorithms for Competitive Programming" class="md-nav__button md-logo" data-md-component="logo" href="/main/index.html" title="Algorithms for Competitive Programming">
-<img alt="logo" src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/favicon.ico"/>
+<img alt="logo" src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/favicon.ico"/>
 </a>
     Algorithms for Competitive Programming
   </label>
@@ -3784,7 +3784,7 @@ Describe the issue of this article in detail.
 <li>We will assume that the resulting intersection is always either bounded or empty. If we need to handle the unbounded case, we can simply add 4 half-planes that define a large-enough bounding box. </li>
 <li>We will assume, for simplicity, that there are no parallel half-planes in the given set. Towards the end of the article we will discuss how to deal with such cases.</li>
 </ol>
-<p><img alt="" src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/geometry/halfplanes_rep.png"/> </p>
+<p><img alt="" src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/geometry/halfplanes_rep.png"/> </p>
 <p>The half-plane <span class="arithmatex">$y \geq 2x - 2$</span> can be represented as the point <span class="arithmatex">$P = (1, 0)$</span> with direction vector <span class="arithmatex">$PQ = Q - P = (1, 2)$</span></p>
 <h2 id="brute-force-approach-on3">Brute force approach - <span class="arithmatex">$O(N^3)$</span><a class="headerlink" href="#brute-force-approach-on3" title="Permanent link">¶</a></h2>
 <p>One of the most straightforward and obvious solutions would be to compute the intersection point of the lines of all pairs of half-planes and, for each point, check if it is inside all of the other half-planes. Since there are <span class="arithmatex">$O(N^2)$</span> intersection points, and for each of them we have to check <span class="arithmatex">$O(N)$</span> half-planes, the total time complexity is <span class="arithmatex">$O(N^3)$</span>. The actual region of the intersection can then be reconstructed using, for example, a Convex Hull algorithm on the set of intersection points that were included in all the half-planes. </p>
@@ -3804,9 +3804,9 @@ Describe the issue of this article in detail.
 <p><em>We say a half-plane is "redundant" if it does not contribute anything to the intersection. Such a half-plane could be removed and the resulting intersection would not change at all.</em></p>
 <p>Here's a small example with an illustration:</p>
 <p>Let <span class="arithmatex">$H = \{ A, B, C, D, E \}$</span> be the set of half-planes currently present in the intersection. Additionally, let <span class="arithmatex">$P = \{ p, q, r, s \}$</span> be the set of intersection points of adjacent half-planes in H. Now, suppose we wish to intersect it with the half-plane <span class="arithmatex">$F$</span>, as seen in the illustration below:</p>
-<p><img alt="" src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/geometry/halfplanes_hp1.png"/></p>
+<p><img alt="" src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/geometry/halfplanes_hp1.png"/></p>
 <p>Notice the half-plane <span class="arithmatex">$F$</span> makes <span class="arithmatex">$A$</span> and <span class="arithmatex">$E$</span> redundant in the intersection. So we remove both <span class="arithmatex">$A$</span> and <span class="arithmatex">$E$</span> from the front and back of the intersection, respectively, and add <span class="arithmatex">$F$</span> at the end. And we finally obtain the new intersection <span class="arithmatex">$H = \{ B, C, D, F\}$</span> with <span class="arithmatex">$P = \{ q, r, t, u \}$</span>.</p>
-<p><img alt="" src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/geometry/halfplanes_hp2.png"/></p>
+<p><img alt="" src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/geometry/halfplanes_hp2.png"/></p>
 <p>With all of this in mind, we have almost everything we need to actually implement the algorithm, but we still need to talk about some special cases. At the beginning of the article we said we would add a bounding box to take care of the cases where the intersection could be unbounded, so the only tricky case we actually need to handle is parallel half-planes. We can have two sub-cases: two half-planes can be parallel with the same direction or with opposite direction. The reason this case needs to be handled separately is because we will need to compute intersection points of half-plane lines to be able to check if a half-plane is redundant or not, and two parallel lines have no intersection point, so we need a special way to deal with them.</p>
 <p>For the case of parallel half-planes of opposite orientation: Notice that, because we're adding the bounding box to deal with the unbounded case, this also deals with the case where we have two adjacent parallel half-planes with opposite directions after sorting, since there will have to be at least one of the bounding-box half-planes in between these two (remember they are sorted by angle). </p>
 <ul>
@@ -4065,11 +4065,11 @@ Given a set <span class="arithmatex">$p$</span> of points <span class="arithmate
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/assets/javascripts/bundle.a5f9d56c.min.js"></script>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/javascript/config.js"></script>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/javascript/sidebar-toggle-sync.js"></script>
-<script src="/preview/assets/81886360aa62164becbbf2ea7b49dc9bc21c1384848442e7934cb67e588540db/javascript/donation-banner.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "search": "/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/assets/javascripts/bundle.a5f9d56c.min.js"></script>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/javascript/config.js"></script>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/javascript/sidebar-toggle-sync.js"></script>
+<script src="/preview/assets/a84319121e37996031058e2c96cc810a7560ad76a7d7e7108eb7b0701c4268ad/javascript/donation-banner.js"></script>
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
