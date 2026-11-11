@@ -961,6 +961,17 @@
       "data_structures/stack_queue_modification.html": "/1743/data_structures/stack_queue_modification.html"
     }
   },
+  "1749": {
+    "assets": "ba2d2efa8f849f2554e76d7bab07d60c6e77740911ff3d6ba96da9e9dd0aa02b",
+    "pages": {
+      "algebra/binary-exp.html": "/1749/algebra/binary-exp.html",
+      "algebra/factorization.html": "/1749/algebra/factorization.html",
+      "algebra/fibonacci-numbers.html": "/1749/algebra/fibonacci-numbers.html",
+      "algebra/linear-diophantine-equation.html": "/1749/algebra/linear-diophantine-equation.html",
+      "algebra/phi-function.html": "/1749/algebra/phi-function.html",
+      "data_structures/fenwick.html": "/1749/data_structures/fenwick.html"
+    }
+  },
   "main": {
     "assets": "ba2d2efa8f849f2554e76d7bab07d60c6e77740911ff3d6ba96da9e9dd0aa02b",
     "pages": {
