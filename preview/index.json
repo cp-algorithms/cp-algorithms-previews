@@ -961,6 +961,12 @@
       "data_structures/stack_queue_modification.html": "/1743/data_structures/stack_queue_modification.html"
     }
   },
+  "1758": {
+    "assets": "ba2d2efa8f849f2554e76d7bab07d60c6e77740911ff3d6ba96da9e9dd0aa02b",
+    "pages": {
+      "geometry/vertical_decomposition.html": "/1758/geometry/vertical_decomposition.html"
+    }
+  },
   "main": {
     "assets": "ba2d2efa8f849f2554e76d7bab07d60c6e77740911ff3d6ba96da9e9dd0aa02b",
     "pages": {
