@@ -1003,6 +1003,12 @@
       "graph/topological-sort.html": "/1764/graph/topological-sort.html"
     }
   },
+  "1765": {
+    "assets": "ba2d2efa8f849f2554e76d7bab07d60c6e77740911ff3d6ba96da9e9dd0aa02b",
+    "pages": {
+      "data_structures/sparse-table.html": "/1765/data_structures/sparse-table.html"
+    }
+  },
   "main": {
     "assets": "ba2d2efa8f849f2554e76d7bab07d60c6e77740911ff3d6ba96da9e9dd0aa02b",
     "pages": {
