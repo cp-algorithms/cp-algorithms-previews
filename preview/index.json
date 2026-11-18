@@ -1021,6 +1021,12 @@
       "algebra/fft.html": "/1767/algebra/fft.html"
     }
   },
+  "1768": {
+    "assets": "ba2d2efa8f849f2554e76d7bab07d60c6e77740911ff3d6ba96da9e9dd0aa02b",
+    "pages": {
+      "string/manacher.html": "/1768/string/manacher.html"
+    }
+  },
   "main": {
     "assets": "ba2d2efa8f849f2554e76d7bab07d60c6e77740911ff3d6ba96da9e9dd0aa02b",
     "pages": {
