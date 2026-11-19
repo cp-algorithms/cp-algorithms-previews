@@ -1042,7 +1042,7 @@
     }
   },
   "main": {
-    "assets": "ba2d2efa8f849f2554e76d7bab07d60c6e77740911ff3d6ba96da9e9dd0aa02b",
+    "assets": "6d0172bb5383dace7f407afb4447bf2f17524c464e79b2e384381ab8bad08d0a",
     "pages": {
       "algebra/all-submasks.html": "/main/algebra/all-submasks.html",
       "algebra/balanced-ternary.html": "/main/algebra/balanced-ternary.html",
