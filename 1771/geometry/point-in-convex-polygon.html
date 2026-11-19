@@ -3306,7 +3306,7 @@ Describe the issue of this article in detail.
 </a>
 <!-- Dates of last and first commit -->
 <ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="en-us">
-Last update: November 18, 2026 Created: October 4, 2018 
+Last update: September 18, 2026 Created: October 4, 2018 
 <!-- Tags -->
 <a class="md-tag" href="/1771/tags.html#tag:translated">
       Translated
@@ -3340,9 +3340,8 @@ This can be done by checking if the cross product <span class="arithmatex">$(p_1
 Then we handle the special case in which <span class="arithmatex">$p$</span> is part of the line <span class="arithmatex">$(p_0, p_1)$</span>.
 And then we can binary search the last point from <span class="arithmatex">$p_1,\dots p_n$</span> which is not counter-clockwise from <span class="arithmatex">$p$</span> with respect to <span class="arithmatex">$p_0$</span>.
 For a single point <span class="arithmatex">$p_i$</span> this condition can be checked by checking that <span class="arithmatex">$(p_i - p_0)\times(p - p_0) \le 0$</span>. After we found such a point <span class="arithmatex">$p_i$</span>, we must test if <span class="arithmatex">$p$</span> lies inside the triangle <span class="arithmatex">$p_0, p_i, p_{i + 1}$</span>.
-To test if it belongs to the triangle, we may simply check that</p>
-<div class="arithmatex">$$|(p_i - p_0)\times(p_{i + 1} - p_0)| = |(p_0 - p)\times(p_i - p)| + |(p_i - p)\times(p_{i + 1} - p)| + |(p_{i + 1} - p)\times(p_0 - p)|.$$</div>
-<p>This checks if the area of the triangle <span class="arithmatex">$p_0, p_i, p_{i+1}$</span> has exactly the same size as the sum of the sizes of the triangle <span class="arithmatex">$p_0, p_i, p$</span>, the triangle <span class="arithmatex">$p_0, p, p_{i+1}$</span> and the triangle <span class="arithmatex">$p_i, p_{i+1}, p$</span>.
+To test if it belongs to the triangle, we may simply check that <span class="arithmatex">$|(p_i - p_0)\times(p_{i + 1} - p_0)| = |(p_0 - p)\times(p_i - p)| + |(p_i - p)\times(p_{i + 1} - p)| + |(p_{i + 1} - p)\times(p_0 - p)|$</span>.
+This checks if the area of the triangle <span class="arithmatex">$p_0, p_i, p_{i+1}$</span> has exactly the same size as the sum of the sizes of the triangle <span class="arithmatex">$p_0, p_i, p$</span>, the triangle <span class="arithmatex">$p_0, p, p_{i+1}$</span> and the triangle <span class="arithmatex">$p_i, p_{i+1}, p$</span>.
 If <span class="arithmatex">$p$</span> is outside, then the sum of those three triangles will be bigger than the size of the triangle.
 If it is inside, then it will be equal.</p>
 <h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">¶</a></h2>
@@ -3428,7 +3427,7 @@ By translating the query points we can assume that all vectors start at the orig
 </ul>
 <ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="en-us">
 <span class="contributors-text">Contributors:</span>
-<ul class="contributors" data-bi-name="contributors"><li><a data-bi-name="contributorprofile" href="https://github.com/SYury" target="_blank" title="SYury">SYury</a> (72.66%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/jakobkogler" target="_blank" title="jakobkogler">jakobkogler</a> (10.16%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/ntanthedev" target="_blank" title="ntanthedev">ntanthedev</a> (5.47%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/adamant-pwn" target="_blank" title="adamant-pwn">adamant-pwn</a> (4.69%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/spike1236" target="_blank" title="spike1236">spike1236</a> (3.12%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/ayushkrtiwari" target="_blank" title="ayushkrtiwari">ayushkrtiwari</a> (2.34%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/dallasyan" target="_blank" title="dallasyan">dallasyan</a> (0.78%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/fcnoronha" target="_blank" title="fcnoronha">fcnoronha</a> (0.78%)</li></ul>
+<ul class="contributors" data-bi-name="contributors"><li><a data-bi-name="contributorprofile" href="https://github.com/SYury" target="_blank" title="SYury">SYury</a> (75.2%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/jakobkogler" target="_blank" title="jakobkogler">jakobkogler</a> (10.4%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/ntanthedev" target="_blank" title="ntanthedev">ntanthedev</a> (5.6%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/adamant-pwn" target="_blank" title="adamant-pwn">adamant-pwn</a> (4.8%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/ayushkrtiwari" target="_blank" title="ayushkrtiwari">ayushkrtiwari</a> (2.4%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/dallasyan" target="_blank" title="dallasyan">dallasyan</a> (0.8%)</li><li><a data-bi-name="contributorprofile" href="https://github.com/fcnoronha" target="_blank" title="fcnoronha">fcnoronha</a> (0.8%)</li></ul>
 </ul>
 </article>
 </div>
@@ -3467,7 +3466,7 @@ By translating the query points we can assume that all vectors start at the orig
 <div aria-atomic="true" class="md-dialog" data-md-component="dialog" role="status">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "/1771/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "redirect": null, "search": "/preview/assets/6d0172bb5383dace7f407afb4447bf2f17524c464e79b2e384381ab8bad08d0a/assets/javascripts/workers/search.719e0d91.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "clipboard.error": "Could not copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "/main/", "features": ["toc.integrate", "search.suggest", "content.code.copy"], "redirect": null, "search": "/preview/assets/6d0172bb5383dace7f407afb4447bf2f17524c464e79b2e384381ab8bad08d0a/assets/javascripts/workers/search.719e0d91.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "clipboard.error": "Could not copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="/preview/assets/6d0172bb5383dace7f407afb4447bf2f17524c464e79b2e384381ab8bad08d0a/assets/javascripts/bundle.d31f0ffa.min.js"></script>
 <script src="/preview/assets/6d0172bb5383dace7f407afb4447bf2f17524c464e79b2e384381ab8bad08d0a/javascript/config.js"></script>
 <script src="/preview/assets/6d0172bb5383dace7f407afb4447bf2f17524c464e79b2e384381ab8bad08d0a/javascript/sidebar-toggle.js"></script>
