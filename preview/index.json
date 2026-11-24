@@ -1041,6 +1041,12 @@
       "graph/kuhn_maximum_bipartite_matching.html": "/1770/graph/kuhn_maximum_bipartite_matching.html"
     }
   },
+  "1772": {
+    "assets": "6d0172bb5383dace7f407afb4447bf2f17524c464e79b2e384381ab8bad08d0a",
+    "pages": {
+      "others/josephus_problem.html": "/1772/others/josephus_problem.html"
+    }
+  },
   "main": {
     "assets": "6d0172bb5383dace7f407afb4447bf2f17524c464e79b2e384381ab8bad08d0a",
     "pages": {
